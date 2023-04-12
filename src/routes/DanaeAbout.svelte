@@ -1,7 +1,7 @@
 <div>
-    <p class="heading">
+    <strong class="info-heading">
         ABOUT DANAE.IO
-    </p>
+    </strong>
 
     <p>
         DANAE.IO is an NFT platform dedicated to art galleries and digital assets.
@@ -14,3 +14,11 @@
         can connect easily.
     </p>
 </div>
+
+<style>
+
+    .info-heading {
+        font-size: 24px;
+    }
+    
+</style>

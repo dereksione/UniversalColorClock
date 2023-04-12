@@ -16,11 +16,22 @@
 </div>
 
 <style>
+
     .container {
-        background-color: purple;
+        display: flex;
+        background-color: #A27AEF;
+        
+        justify-content: center;
+        align-items: center;
+        height: 586px;
     }
 
     .inner-container {
-        padding: 20px;
+        /* font-family: 'Raleway', sans-serif; */
+        font-family: 'Montserrat', sans-serif;
+        font-size: 28px;
+        width: 1310px;
+        display: flex;
+
     }
 </style>

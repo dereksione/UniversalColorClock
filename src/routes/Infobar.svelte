@@ -8,6 +8,8 @@
 <div class="container">
     <div class="flex-child leftcol">
         <DmintiAbout />
+        <br />
+        <br />
         <DanaeAbout />
     </div>
     <div class="flex-child rightcol">
@@ -18,12 +20,21 @@
 <style>
     .container {
         display: flex;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-style: light;
+        padding-left: 250px;
+        padding-right: 250px;
+        padding-top: 150px;
         background-color: black;
+        justify-content: center;
+        align-content: center;
         color: white;
     }
 
     .flex-child {
+        font-size: 18px;
         flex: 1;
-        margin: 2rem;
+        width: 620px;
+        margin: 25px;
     }
 </style>

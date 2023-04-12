@@ -1,75 +1,80 @@
 <script>
-	import { tick } from 'svelte';
-	// let currentTime;
-	
-	
+    import { tick } from "svelte";
+    import Clock from "./Clock.svelte";
+    // let currentTime;
+
+    let clockColor = "orange";
 </script>
 
 <home>
-	<header class="primary-header flex">
-	<div>
-		<p class="logo">
-			<!-- {currentTime} -->
-		</p>
-	</div>
-        <nav>
+    <header class="primary-header flex">
+        <div class=logo>
+            <Clock {clockColor}/>
+        </div>
+        <nav class="nav-menu">
             <ul class="primary-navigation blank-list flex">
                 <li>
-                    <a href="https://www.google.com">
-                            Ricci Albenda
-                    </a>
+                    <a href="https://www.google.com"> RICCI ALBENDA </a>
                 </li>
                 <li>
-                    <a href="https://www.google.com">
-                            DMINTI
-                    </a>
+                    <a href="https://www.google.com"> DMINTI </a>
                 </li>
                 <li>
-                    <a href="https://www.google.com">
-                            FAQ
-                    </a>
+                    <a href="https://www.google.com"> FAQ </a>
                 </li>
                 <li>
-                    <a href="https://www.google.com">
-                            Preview
-                    </a>
+                    <a href="https://www.google.com"> PREVIEW </a>
                 </li>
                 <li>
-                    <a href="https://www.google.com">
-                            Purchase Now
-                    </a>
+                    <a href="https://www.google.com"> PURCHASE NOW </a>
                 </li>
             </ul>
         </nav>
-	</header>
-	</home>
+    </header>
+</home>
 
 <style>
-	.flex {
-		display: flex;
-		gap: var(--gap, 2rem);
-	}
-	
-	.logo {
-		margin: 2rem;
-	}
-	
-	.primary-header {
-		align-items: center;
-		justify-content: space-between;
-		background-color: black;
+    .flex {
+        display: flex;
+        gap: var(--gap, 3rem);
+    }
+
+    .logo, .nav-menu {
+        margin: 3rem;
+    }
+
+    .logo {
+        font-family: 'Lato', sans-serif;
+        font-size: 42;
+    }
+
+    .primary-header {
+        align-items: center;
+        justify-content: space-between;
+        background-color: black;
         margin: 0;
         padding: 0;
-	}
-	
-	.blank-list {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-	}
-	
-	.primary-navigation {
-		
-	}
+        height: 75px;
+    }
 
+    .blank-list {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 22;
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    a {
+        color: white;
+        text-decoration: inherit;
+    }
+
+    a:hover {
+        color: grey;
+    }
+
+    .primary-navigation {
+    }
 </style>
