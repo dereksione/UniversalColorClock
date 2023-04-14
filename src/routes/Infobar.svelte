@@ -5,7 +5,7 @@
 
 </script>
 
-<div class="container">
+<div class="container" id="infobar">
     <div class="flex-child leftcol">
         <DmintiAbout />
         <br />

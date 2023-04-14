@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="aboutRicci">
     <div class="inner-container">
     <p>
         Ricci Albenda (b. 1966, Brooklyn) lives and works in New York.
@@ -29,6 +29,7 @@
     .inner-container {
         /* font-family: 'Raleway', sans-serif; */
         font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
         font-size: 28px;
         width: 1310px;
         display: flex;

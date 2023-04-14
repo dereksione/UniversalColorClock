@@ -14,13 +14,13 @@
         <nav class="nav-menu">
             <ul class="primary-navigation blank-list flex">
                 <li>
-                    <a href="https://www.google.com"> RICCI ALBENDA </a>
+                    <a href="#aboutRicci"> RICCI ALBENDA </a>
                 </li>
                 <li>
-                    <a href="https://www.google.com"> DMINTI </a>
+                    <a href="#infobar"> DMINTI </a>
                 </li>
                 <li>
-                    <a href="https://www.google.com"> FAQ </a>
+                    <a href="#infobar"> FAQ </a>
                 </li>
                 <li>
                     <a href="https://www.google.com"> PREVIEW </a>
@@ -56,11 +56,11 @@
         margin: 0;
         padding: 0;
         height: 75px;
-        position: fixed; /* Added this line */
-        top: 0; /* Added this line */
-        left: 0; /* Added this line */
-        width: 100%; /* Added this line */
-        z-index: 100; /* Added this line to ensure it stays on top of other elements */
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        width: 100%;
+        z-index: 100; 
     }
 
     .blank-list {

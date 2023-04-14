@@ -1,22 +1,25 @@
 <script>
   export let buttonText = "Default";
   export let buttonWidth = "90px";
+  export let buttonColor = "#424040";
+  export let buttonTextColor = "white";
+  export let buttonHeight = "60px";
+  export let fontSize = "20px";
 </script>
 
-<button class="rounded-button" style="width: {buttonWidth}">{buttonText}</button
+<button
+  class="rounded-button"
+  style="width: {buttonWidth}; height: {buttonHeight}; background-color: {buttonColor}; color: {buttonTextColor}; font-size: {fontSize}"
+  >{buttonText}</button
 >
 
 <style>
   .rounded-button {
-    background-color: #424040;
     font-family: "Montserrat", sans-serif;
-    font-size: 20px;
-    color: white;
     border: none;
     border-radius: 30px;
     padding: 10px 20px;
     cursor: pointer;
-    height: 60px;
     outline: none;
     transition: background-color 0.2s;
   }

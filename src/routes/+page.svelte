@@ -15,7 +15,7 @@
 <Purchasebar />
 <ColorDemobar />
 <PurchaseFramebar />
-<RicciAbout />
+    <RicciAbout />
 <Infobar />
 <BottomBar />
 <Previewbar />

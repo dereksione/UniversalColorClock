@@ -76,6 +76,7 @@
         font-family: "Lato", sans-serif;
         font-weight: 300;
         margin-left: 300px;
+        margin-bottom: 80px;
         bottom: 30px;
         left: 30px;
         color: rgba(252, 252, 252, 0.5);
