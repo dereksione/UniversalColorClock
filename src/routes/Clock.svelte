@@ -32,5 +32,6 @@
 	}
 	
 </script>
-
-<h1 style="color: {clockColor}">{strTime}</h1>
+<div>
+	<h1 style="color: {clockColor}">{strTime}</h1>
+</div>

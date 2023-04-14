@@ -8,8 +8,8 @@
 
 <home>
     <header class="primary-header flex">
-        <div class=logo>
-            <Clock {clockColor}/>
+        <div class="clock">
+            <Clock {clockColor} />
         </div>
         <nav class="nav-menu">
             <ul class="primary-navigation blank-list flex">
@@ -39,12 +39,13 @@
         gap: var(--gap, 3rem);
     }
 
-    .logo, .nav-menu {
+    .clock,
+    .nav-menu {
         margin: 3rem;
     }
 
-    .logo {
-        font-family: 'Lato', sans-serif;
+    .clock {
+        font-family: "Lato", sans-serif;
         font-size: 42;
     }
 
@@ -55,10 +56,15 @@
         margin: 0;
         padding: 0;
         height: 75px;
+        position: fixed; /* Added this line */
+        top: 0; /* Added this line */
+        left: 0; /* Added this line */
+        width: 100%; /* Added this line */
+        z-index: 100; /* Added this line to ensure it stays on top of other elements */
     }
 
     .blank-list {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 22;
         font-weight: 400;
         margin: 0;

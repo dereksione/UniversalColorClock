@@ -76,7 +76,13 @@
 <style>
     .question {
         font-size: 19px;
+        font-weight: 800;
     }
+
+    .answer {
+        font-weight: 100;
+    }
+
     .info-heading {
         font-size: 25px;
     }

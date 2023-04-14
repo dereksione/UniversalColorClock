@@ -33,6 +33,7 @@
 
     .flex-child {
         font-size: 18px;
+        font-weight: 100;
         flex: 1;
         width: 620px;
         margin: 25px;
