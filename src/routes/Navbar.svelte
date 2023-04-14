@@ -36,7 +36,7 @@
 <style>
     .flex {
         display: flex;
-        gap: var(--gap, 3rem);
+        gap: var(--gap, 4rem);
     }
 
     .clock,
