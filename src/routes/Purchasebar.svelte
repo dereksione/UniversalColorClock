@@ -21,7 +21,7 @@
         </div>
         <div class="bottom-container">
             <div class="clock">
-                <Clock {clockColor} />
+                <Clock />
             </div>
             <div class="buy-container">
                 <div class="caption-wrapper">
@@ -64,11 +64,20 @@
         box-sizing: border-box;
     }
 
+    .container {
+        padding: 0;
+        margin: 0;
+        height: 960px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+    }
+
     .text-container {
         justify-content: center;
         font-family: "Montserrat", sans-serif;
         font-weight: 200;
-        margin-left: 350px;
+        /* margin-left: 350px; */
         width: 1050px;
     }
 
@@ -138,10 +147,4 @@
         justify-content: center;
     }
 
-    .container {
-        padding: 0;
-        margin: 0;
-        height: 960px;
-        background-color: black;
-    }
 </style>

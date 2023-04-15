@@ -9,7 +9,7 @@
 <home>
     <header class="primary-header flex">
         <div class="clock">
-            <Clock {clockColor} />
+            <Clock />
         </div>
         <nav class="nav-menu">
             <ul class="primary-navigation blank-list flex">
