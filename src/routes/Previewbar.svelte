@@ -1,5 +1,15 @@
 <script>
     import GreyButton from "./GreyButton.svelte";
+
+    /**
+     * Returns a function that can be used as the on|click handler function for simple redirects
+     * @param {string} redirect
+     */
+    function createRedirectOnClick(redirect) {
+        return () => {
+            window.location.href = redirect;
+        };
+    }
 </script>
 
 <div class="container">
@@ -12,10 +22,11 @@
                 buttonHeight="40px"
                 buttonTextColor="black"
                 fontSize="17px"
+                handleClick = {createRedirectOnClick("/colorclock")}
             />
         </div>
         <div class="preview-text items">
-            <p>◀ &nbsp PREVIEW THE CLOCK ON YOUR DEVICE &nbsp ▶ </p>
+            <p>◀ &nbsp PREVIEW THE CLOCK ON YOUR DEVICE &nbsp ▶</p>
         </div>
         <div class="base-button items">
             <GreyButton
@@ -25,6 +36,7 @@
                 buttonHeight="40px"
                 buttonTextColor="black"
                 fontSize="17px"
+                handleClick = {createRedirectOnClick("/colorclocksaturated")}
             />
         </div>
     </div>
@@ -52,7 +64,7 @@
     }
 
     .centered {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 21px;
         font-weight: 700;
         /* padding-top: 5px; */

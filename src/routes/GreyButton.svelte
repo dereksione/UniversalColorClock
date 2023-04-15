@@ -5,11 +5,14 @@
   export let buttonTextColor = "white";
   export let buttonHeight = "60px";
   export let fontSize = "20px";
+  export let handleClick = () => {};
+
 </script>
 
 <button
   class="rounded-button"
   style="width: {buttonWidth}; height: {buttonHeight}; background-color: {buttonColor}; color: {buttonTextColor}; font-size: {fontSize}"
+  on:click={handleClick}
   >{buttonText}</button
 >
 
