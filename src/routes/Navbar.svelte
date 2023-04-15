@@ -23,10 +23,10 @@
                     <a href="#infobar"> FAQ </a>
                 </li>
                 <li>
-                    <a href="https://www.google.com"> PREVIEW </a>
+                    <a href="/colorclock"> PREVIEW </a>
                 </li>
                 <li>
-                    <a href="https://www.google.com"> PURCHASE NOW </a>
+                    <a href="#purchase-section"> PURCHASE NOW </a>
                 </li>
             </ul>
         </nav>

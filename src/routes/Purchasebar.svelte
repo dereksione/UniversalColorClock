@@ -6,7 +6,7 @@
 </script>
 
 <div class="container">
-    <div class="text-container">
+    <div class="text-container" id="purchase-section">
         <div class="tagline-big">
             <p style="color: {clockColor}">
                 The UC Clock displays 1440 different hues, one for each minute
@@ -19,11 +19,11 @@
             minute and corresponding 1441st color that can be toggled on or off
             like a visual alarm.
         </div>
-        <div class="bottom-container">
+        <div class="bottom-container" >
             <div class="clock">
                 <Clock />
             </div>
-            <div class="buy-container">
+            <div class="buy-container" >
                 <div class="caption-wrapper">
                     <div class="buy-top-caption caption">SELECT QUANTITY</div>
                 </div>
