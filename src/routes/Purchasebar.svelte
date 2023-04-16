@@ -1,14 +1,28 @@
 <script>
     import Clock from "./Clock.svelte";
+    import { normalHue } from "../ucc-script/retrieve";
     import GreyButton from "./GreyButton.svelte";
+    import { onMount } from "svelte";
 
-    let clockColor = "orange";
+    let time = new Date();
+
+    $: [r, g, b] = normalHue(time);
+
+    onMount(() => {
+        const interval = setInterval(() => {
+            time = new Date();
+        }, 1000);
+
+        return () => {
+            clearInterval(interval);
+        };
+    });
 </script>
 
 <div class="container">
     <div class="text-container" id="purchase-section">
         <div class="tagline-big">
-            <p style="color: {clockColor}">
+            <p style="color: rgb({`${r},${g},${b}`})">
                 The UC Clock displays 1440 different hues, one for each minute
                 of the day.
             </p>
@@ -49,7 +63,7 @@
                         <GreyButton buttonText={"ETH"} buttonWidth="140px" />
                     </div>
                 </div>
-                <div class="mint-disclaimer" style="color:{clockColor}">
+                <div class="mint-disclaimer" style="color:rgb({`${r},${g},${b}`})">
                     *This is a randomized mint. You will be assigned a minute based on the algorithm of the mint. 
                 </div>
             </div>
