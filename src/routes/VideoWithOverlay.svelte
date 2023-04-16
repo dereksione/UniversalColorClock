@@ -1,14 +1,21 @@
 <script>
-    import Videobar from "./Videobar.svelte";
     import { onMount } from "svelte";
+    import timelapse from "../assets/timelapse.mp4";
 
     let timeNow = new Date();
+
+    const vidHeight = "1080px";
+    const vidWidth = "1810px";
 
     $: [hoursLeft, minsLeft] = calculateCountdown(timeNow);
     $: daysLeft = daysBetween(timeNow, mintDate);
 
     const mintDate = new Date("2023-04-30"); // April 30th, 2023 - 00:00:00
 
+    /**
+     * 
+     * @param {Date} timeNow
+     */
     function calculateCountdown(timeNow) {
         let dateDiff = mintDate - timeNow;
         let delta = new Date(dateDiff);
@@ -16,6 +23,11 @@
         return [delta.getHours(), delta.getMinutes()];
     }
 
+    /**
+     * 
+     * @param {Date} date1
+     * @param {Date} date2
+     */
     function daysBetween(date1, date2) {
         const oneDay = 24 * 60 * 60 * 1000; // Number of milliseconds in a day
         const timeDiff = Math.abs(date2.getTime() - date1.getTime()); // Difference in milliseconds
@@ -36,7 +48,7 @@
 </script>
 
 <div class="parent-container">
-    <Videobar />
+    <video class="responsive-video" src={timelapse} autoplay loop muted />
     <div class="text-overlay vertically-centered">
         <div class="UCC">UNIVERSAL COLOR CLOCK</div>
         <div class="tacky-line">Fluid color. Precision time.</div>
@@ -52,6 +64,8 @@
 <style>
     .parent-container {
         position: relative;
+        display: flex;
+        background-color: black;
     }
 
     .text-overlay {
@@ -70,6 +84,23 @@
         width: 700px;
         bottom: 30px;
         right: 30px;
+    }
+
+    .responsive-video {
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Media query for screens larger than the video width */
+    @media (min-width: 1810px) {
+        .parent-container {
+            justify-content: center;
+        }
+
+        .responsive-video {
+            object-fit: contain;
+        }
     }
 
     .countdown {
