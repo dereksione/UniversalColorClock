@@ -80,7 +80,4 @@
     a:hover {
         color: grey;
     }
-
-    .primary-navigation {
-    }
 </style>

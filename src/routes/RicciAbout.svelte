@@ -29,7 +29,7 @@
     .inner-container {
         /* font-family: 'Raleway', sans-serif; */
         font-family: 'Montserrat', sans-serif;
-        font-weight: 300;
+        font-weight: 200;
         font-size: 28px;
         width: 1310px;
         display: flex;
