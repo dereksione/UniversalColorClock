@@ -14,16 +14,16 @@
         <nav class="nav-menu">
             <ul class="primary-navigation blank-list flex">
                 <li>
-                    <a href="#aboutRicci"> RICCI ALBENDA </a>
+                    <a href="/colorclock"> VIEW YOUR NFTs </a>
                 </li>
                 <li>
-                    <a href="#infobar"> DMINTI </a>
+                    <a href="#aboutRicci"> RICCI ALBENDA </a>
                 </li>
                 <li>
                     <a href="#infobar"> FAQ </a>
                 </li>
                 <li>
-                    <a href="/colorclock"> PREVIEW </a>
+                    <a href="#infobar"> DMINTI </a>
                 </li>
                 <li>
                     <a href="#purchase-section"> PURCHASE NOW </a>
