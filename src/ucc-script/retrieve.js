@@ -1,9 +1,32 @@
 import { m } from './colors.js';
 
-// @ts-ignore
+/**
+ * @param {Date} t 
+ */
 export function normalHue(t) {
-    let hours = t.getHours().toString().padStart(2, '0');
-    let mins = t.getMinutes().toString().padStart(2, '0');
+    let hours = t.getHours().toString();
+    let mins = t.getMinutes().toString();
+
+    return getNormalHueFromHoursMins(hours, mins);
+}
+
+/**
+ * @param {Date} t 
+ */
+export function saturatedHue(t) {
+    let hours = t.getHours().toString();
+    let mins = t.getMinutes().toString();
+   
+    return getSaturatedHueFromHoursMins(hours, mins);
+}
+
+/**
+ * @param {String} hours
+ * @param {String} mins
+ */
+export function getNormalHueFromHoursMins(hours, mins) {
+    hours = hours.padStart(2, '0');
+    mins = mins.padStart(2, '0');
     let timeKey = hours + ":" + mins;
   
     let r = Math.trunc(m.get(timeKey)[1])
@@ -13,10 +36,25 @@ export function normalHue(t) {
     return [r, g, b];
 }
 
-// @ts-ignore
-export function saturatedHue(t) {
-    let hours = t.getHours().toString().padStart(2, '0');
-    let mins = t.getMinutes().toString().padStart(2, '0');
+/**
+ * @param {String} hours
+ * @param {String} mins
+ */
+export function getHueCode(hours, mins) {
+    hours = hours.padStart(2, '0');
+    mins = mins.padStart(2, '0');
+    let timeKey = hours + ":" + mins;
+   
+    return Math.trunc(m.get(timeKey)[0]);
+}
+
+/**
+ * @param {String} hours
+ * @param {String} mins
+ */
+export function getSaturatedHueFromHoursMins(hours, mins) {
+    hours = hours.padStart(2, '0');
+    mins = mins.padStart(2, '0');
     let timeKey = hours + ":" + mins;
   
     let r = Math.trunc(m.get(timeKey)[4])

@@ -41,7 +41,7 @@
         <div class="left-col col">
             <div class="frame-text left-content">
                 <div class="text">
-                    <span style="color: {colorString};">Customize the frame</span>with
+                    <span style="color: {colorString};">Customize the frame</span> with
                     your token to bring Ricci Albenda's Universal Color Clock
                     into your home!
                 </div>
@@ -71,7 +71,7 @@
 <style>
     .container {
         width: 100%;
-        height: 1000px;
+        height: 1200px;
         background-color: white;
         align-items: center;
     }
@@ -94,6 +94,8 @@
 
     .col {
         height: 100%;
+        padding-left: 10%;
+        padding-right: 10%;
     }
 
     .right-col {
@@ -106,8 +108,8 @@
     }
 
     .left-content {
-        padding-left: 20%;
-        padding-right: 20%;
+        padding-left: 10%;
+        padding-right: 10%;
         flex-direction: column;
     }
 
@@ -116,8 +118,9 @@
     }
 
     .frame-text {
-        height: 50%;
+        height: 40%;
         font-size: 38px;
+        padding-bottom: 7%;
         margin: 0;
     }
 
