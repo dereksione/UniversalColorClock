@@ -1,7 +1,7 @@
 <script>
     import Clock from "./Clock.svelte";
-    import { normalHue } from "../ucc-script/retrieve";
     import GreyButton from "./GreyButton.svelte";
+    import { normalHue } from "../ucc-script/retrieve";
     import { onMount } from "svelte";
 
     let time = new Date();
