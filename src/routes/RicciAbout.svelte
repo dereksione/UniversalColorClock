@@ -48,9 +48,9 @@
 
     .inner-container {
         /* font-family: 'Raleway', sans-serif; */
-        font-family: "Montserrat", sans-serif;
-        font-weight: 200;
-        font-size: 28px;
+        font-family: SeravekBasicLight, sans-serif;
+        font-weight: 100;
+        font-size: 32px;
         width: 1310px;
         display: flex;
     }

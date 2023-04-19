@@ -17,6 +17,12 @@
             clearInterval(interval);
         };
     });
+
+    let quantity = 1;
+
+    function handleQuantitySelection() {
+        
+    }
 </script>
 
 <div class="container">
@@ -89,24 +95,28 @@
 
     .text-container {
         justify-content: center;
-        font-family: "Montserrat", sans-serif;
         font-weight: 200;
         /* margin-left: 350px; */
         width: 1050px;
     }
 
-    .tagline-desc {
-        color: white;
-        padding-top: 40px;
-        font-size: 26px;
-    }
+
 
     .tagline-big {
-        font-size: 44px;
+        font-family: SeravekBasicExtraLight;
+        font-size: 60px;
         padding-top: 160px;
     }
 
+    .tagline-desc {
+        color: white;
+        font-family: SeravekBasicExtraLight;
+        padding-top: 40px;
+        font-size: 32px;
+    }
+
     .caption-wrapper {
+        font-family: SeravekBasicLight;
         display: flex;
         justify-content: center;
     }
@@ -118,8 +128,9 @@
     }
 
     .clock {
-        font-family: "Lato", sans-serif;
+        font-family: SimplexUCCABold;
         font-size: 80px;
+        font-weight: 800;
         margin-top: 20px;
         margin-right: 120px;
         white-space: nowrap;

@@ -6,7 +6,6 @@
   export let buttonHeight = "60px";
   export let fontSize = "20px";
   export let handleClick = () => {};
-
 </script>
 
 <button
@@ -18,7 +17,7 @@
 
 <style>
   .rounded-button {
-    font-family: "Montserrat", sans-serif;
+    font-family: SeravekBasicLight;
     border: none;
     border-radius: 30px;
     padding: 10px 20px;

@@ -45,7 +45,9 @@ export function getHueCode(hours, mins) {
     mins = mins.padStart(2, '0');
     let timeKey = hours + ":" + mins;
    
-    return Math.trunc(m.get(timeKey)[0]);
+    let code = m.get(timeKey)[0];
+
+    return code;
 }
 
 /**

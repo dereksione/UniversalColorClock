@@ -45,8 +45,10 @@
     }
 
     .clock {
-        font-family: "Lato", sans-serif;
-        font-size: 42;
+        font-family: SimplexUCCA, sans-serif;
+        font-size: 32px;
+        align-items: center;
+        padding-top: 20px;
     }
 
     .primary-header {
@@ -55,18 +57,19 @@
         background-color: black;
         margin: 0;
         padding: 0;
-        height: 75px;
+        height: 90px;
         position: fixed; 
         top: 0; 
         left: 0; 
         width: 100%;
         z-index: 100; 
+        display: flex;
     }
 
     .blank-list {
-        font-family: "Montserrat", sans-serif;
-        font-size: 22;
-        font-weight: 400;
+        font-family: SeravekBasicLight;
+        font-size: 26;
+        font-weight: 500;
         margin: 0;
         padding: 0;
         list-style: none;

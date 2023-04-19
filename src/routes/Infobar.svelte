@@ -10,7 +10,6 @@
         <DmintiAbout />
         <br />
         <br />
-        <DanaeAbout />
     </div>
     <div class="flex-child rightcol">
         <Faq />

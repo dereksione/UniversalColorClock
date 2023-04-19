@@ -104,7 +104,7 @@
     }
 
     .countdown {
-        font-family: "Lato", sans-serif;
+        font-family: SimplexUCCA;
         font-weight: 300;
         margin-left: 300px;
         margin-bottom: 80px;
@@ -114,23 +114,24 @@
     }
 
     .countdown-text {
+        font-family: SeravekBasicLight;
         font-size: 20px;
     }
 
     .countdown-numbers {
-        font-size: 45px;
+        font-size: 36px;
     }
 
     .tacky-line {
-        font-family: "Montserrat", sans-serif;
-        font-size: 30px;
+        font-family: SeravekBasicLight;
+        font-size: 42px;
         font-weight: 300;
         color: black;
     }
 
     .UCC {
-        font-family: "Lato", sans-serif;
-        font-size: 90px;
-        font-weight: 600;
+        font-family: SimplexUCCA;
+        font-size: 100px;
+        font-weight: 300;
     }
 </style>
