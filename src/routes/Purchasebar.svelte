@@ -100,10 +100,11 @@
         width: 1050px;
     }
 
-
+    .tagline-big, .tagline-desc {
+        font-family: SeravekBasicExtraLight;
+    }
 
     .tagline-big {
-        font-family: SeravekBasicExtraLight;
         font-size: 60px;
         padding-top: 160px;
     }
@@ -115,8 +116,11 @@
         font-size: 32px;
     }
 
-    .caption-wrapper {
+    .caption-wrapper, .mint-disclaimer {
         font-family: SeravekBasicLight;
+    }
+
+    .caption-wrapper {
         display: flex;
         justify-content: center;
     }
