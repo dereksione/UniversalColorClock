@@ -56,7 +56,7 @@
     <div class="text-overlay countdown">
         <div class="countdown-text">COUNTDOWN TO MINT</div>
         <div class="countdown-numbers">
-            {daysLeft} DAYS &nbsp; {hoursLeft} HOURS &nbsp; {minsLeft} MINUTES
+            {daysLeft} DAYS {hoursLeft} HOURS {minsLeft} MINUTES
         </div>
     </div>
 </div>
