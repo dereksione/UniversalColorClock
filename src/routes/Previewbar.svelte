@@ -29,13 +29,15 @@
         };
     }
 
-    $: hueString = `rgb(${hue.r},${hue.g},${hue.b})`
-    $: saturatedHueString = `rgb(${saturatedHue.r},${saturatedHue.g},${saturatedHue.b})`
+    $: hueString = `rgb(${hue.r},${hue.g},${hue.b})`;
+    $: saturatedHueString = `rgb(${saturatedHue.r},${saturatedHue.g},${saturatedHue.b})`;
 
     /**
      * @type {string}
      */
     $: gradientStyle = `linear-gradient(to right, ${hueString}, ${saturatedHueString})`;
+    $: textContent = "◀ &nbsp PREVIEW THE CLOCK ON YOUR DEVICE &nbsp ▶";
+    $: previewTextStyle = `background: ${gradientStyle}; -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: transparent;`;
 </script>
 
 <div class="container">
@@ -43,7 +45,7 @@
         <div class="base-button items">
             <GreyButton
                 buttonText="Base"
-                buttonColor="{hueString}"
+                buttonColor={hueString}
                 buttonWidth="140px"
                 buttonHeight="40px"
                 buttonTextColor="black"
@@ -51,16 +53,13 @@
                 handleClick={createRedirectOnClick("/colorclock")}
             />
         </div>
-        <div
-            class="preview-text items"
-            style="background: {gradientStyle}; -webkit-text-fill-color: transparent; -webkit-background-clip: text"
-        >
-            <p>◀ &nbsp PREVIEW THE CLOCK ON YOUR DEVICE &nbsp ▶</p>
+        <div class="preview-text items">
+            <p style="{previewTextStyle}">{@html textContent}</p>
         </div>
         <div class="base-button items">
             <GreyButton
                 buttonText="Bright"
-                buttonColor="{saturatedHueString}"
+                buttonColor={saturatedHueString}
                 buttonWidth="140px"
                 buttonHeight="40px"
                 buttonTextColor="black"
@@ -83,6 +82,9 @@
     }
 
     .preview-text {
+        color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     .items {
