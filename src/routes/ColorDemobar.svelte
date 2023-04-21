@@ -43,6 +43,7 @@
         saturatedHue = val;
     });
 
+    // @ts-ignore
     function paintCanvas(width, height, data, huepickerFn) {
         let col = 0;
 
@@ -100,8 +101,7 @@
         style="background-color: rgb({`${hue.r},${hue.g},${hue.b}`})"
     >
         <div class="text-outer">
-            <div class="text-inner left">UC HUE</div>
-            <div class="text-inner right">YOUR CLOCK HAS ALL OF THESE</div>
+            <div class="text-inner">YOUR CLOCK HAS ALL OF THESE</div>
         </div>
     </div>
     <div class="middle-hue inner">
@@ -117,8 +117,7 @@
         style="background-color: rgb({`${saturatedHue.r},${saturatedHue.g},${saturatedHue.b}`})"
     >
         <div class="text-outer">
-            <div class="text-inner left">CODE {hueString}</div>
-            <div class="text-inner right">AND ONE OF THESE</div>
+            <div class="text-inner">AND ONE OF THESE</div>
         </div>
     </div>
 </div>
@@ -144,21 +143,13 @@
         display: flex;
         font-family: SeravekBasicExtraLight;
         font-size: 38px;
+        align-items: center;
+        justify-content: center;
     }
 
     .text-inner {
-        width: 50%;
-        height: 100%;
         display: flex;
         align-items: center;
-    }
-
-    .left {
-        justify-content: left;
-    }
-
-    .right {
-        justify-content: right;
     }
 
     .middle-hue {
