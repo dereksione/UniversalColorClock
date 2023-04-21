@@ -1,22 +1,19 @@
 <script>
-    import { normalHue } from "../ucc-script/retrieve";
-    import { onMount } from "svelte";
-    let time = new Date();
+    import { normalColor } from "./stores";
 
-    $: [r, g, b] = normalHue(time);
+    /**
+     * @type {{ r?: any; g?: any; b?: any; }}
+     */
+    let hue;
 
-    onMount(() => {
-        const interval = setInterval(() => {
-            time = new Date();
-        }, 1000);
+    normalColor.subscribe(val => {
+        hue = val;
+    })
 
-        return () => {
-            clearInterval(interval);
-        };
-    });
+    
 </script>
 
-<div class="container" id="aboutRicci" style="background-color: rgb({`${r},${g},${b}`})">
+<div class="container" id="aboutRicci" style="background-color: rgb({`${hue.r},${hue.g},${hue.b}`})">
     <div class="inner-container">
         <p>
             Ricci Albenda (b. 1966, Brooklyn) lives and works in New York. In

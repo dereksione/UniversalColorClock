@@ -1,5 +1,23 @@
 <script>
     import GreyButton from "./GreyButton.svelte";
+    import { normalColor, saturatedColor } from "./stores";
+
+    /**
+     * @type {{ r?: any; g?: any; b?: any; }}
+     */
+    let hue;
+    /**
+     * @type {{ r?: any; g?: any; b?: any; }}
+     */
+    let saturatedHue;
+
+    normalColor.subscribe((val) => {
+        hue = val;
+    });
+
+    saturatedColor.subscribe((val) => {
+        saturatedHue = val;
+    });
 
     /**
      * Returns a function that can be used as the on|click handler function for simple redirects
@@ -10,6 +28,14 @@
             window.location.href = redirect;
         };
     }
+
+    $: hueString = `rgb(${hue.r},${hue.g},${hue.b})`
+    $: saturatedHueString = `rgb(${saturatedHue.r},${saturatedHue.g},${saturatedHue.b})`
+
+    /**
+     * @type {string}
+     */
+    $: gradientStyle = `linear-gradient(to right, ${hueString}, ${saturatedHueString})`;
 </script>
 
 <div class="container">
@@ -17,26 +43,29 @@
         <div class="base-button items">
             <GreyButton
                 buttonText="Base"
-                buttonColor="#a27aef"
+                buttonColor="{hueString}"
                 buttonWidth="140px"
                 buttonHeight="40px"
                 buttonTextColor="black"
                 fontSize="17px"
-                handleClick = {createRedirectOnClick("/colorclock")}
+                handleClick={createRedirectOnClick("/colorclock")}
             />
         </div>
-        <div class="preview-text items">
+        <div
+            class="preview-text items"
+            style="background: {gradientStyle}; -webkit-text-fill-color: transparent; -webkit-background-clip: text"
+        >
             <p>◀ &nbsp PREVIEW THE CLOCK ON YOUR DEVICE &nbsp ▶</p>
         </div>
         <div class="base-button items">
             <GreyButton
                 buttonText="Bright"
-                buttonColor="#8a00ff"
+                buttonColor="{saturatedHueString}"
                 buttonWidth="140px"
                 buttonHeight="40px"
                 buttonTextColor="black"
                 fontSize="17px"
-                handleClick = {createRedirectOnClick("/colorclocksaturated")}
+                handleClick={createRedirectOnClick("/colorclocksaturated")}
             />
         </div>
     </div>
@@ -54,9 +83,6 @@
     }
 
     .preview-text {
-        background: linear-gradient(to right, #a27aef, #8a00ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
     }
 
     .items {

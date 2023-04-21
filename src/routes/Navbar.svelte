@@ -8,9 +8,6 @@
 
 <home>
     <header class="primary-header flex">
-        <div class="clock">
-            <Clock />
-        </div>
         <nav class="nav-menu">
             <ul class="primary-navigation blank-list flex">
                 <li>
@@ -37,18 +34,6 @@
     .flex {
         display: flex;
         gap: var(--gap, 4rem);
-    }
-
-    .clock,
-    .nav-menu {
-        margin: 3rem;
-    }
-
-    .clock {
-        font-family: SimplexUCCA, sans-serif;
-        font-size: 32px;
-        align-items: center;
-        padding-top: 20px;
     }
 
     .primary-header {

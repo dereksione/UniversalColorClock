@@ -3,13 +3,45 @@
     import {
         getNormalHueFromHoursMins,
         getSaturatedHueFromHoursMins,
-        getHueCode,
     } from "../ucc-script/retrieve";
 
+    import { colorCode, normalColor, saturatedColor } from "./stores";
+
+    /**
+     * @type {HTMLCanvasElement}
+     */
     let normalSpectrum;
-    let normalHeight;
-    let normalWidth;
+    /**
+     * @type {HTMLCanvasElement}
+     */
     let saturatedSpectrum;
+
+    /**
+     * @type {string}
+     */
+    let hueString;
+    /**
+     * @type {{ r: any; g: any; b: any; }}
+     */
+    let hue;
+    /**
+     * @type {{ r: any; g: any; b: any; }}
+     */
+    let saturatedHue;
+
+    colorCode.subscribe((val) => {
+        hueString = val;
+    });
+
+    normalColor.subscribe((val) => {
+        // @ts-ignore
+        hue = val;
+    });
+
+    saturatedColor.subscribe((val) => {
+        // @ts-ignore
+        saturatedHue = val;
+    });
 
     function paintCanvas(width, height, data, huepickerFn) {
         let col = 0;
@@ -39,23 +71,21 @@
         }
     }
 
+    /**
+     * @param {HTMLCanvasElement} element
+     * @param {{ (hours: string, mins: string): number[]; (hours: string, mins: string): number[]; }} huepickerFn
+     */
     function setUpCtx(element, huepickerFn) {
         const ctx = element.getContext("2d");
         const width = element.width;
         const height = element.height;
+        // @ts-ignore
         const imageData = ctx.createImageData(width, height);
         let data = imageData.data;
         paintCanvas(width, height, data, huepickerFn);
 
+        // @ts-ignore
         ctx.putImageData(imageData, 0, 0);
-    }
-
-    function getHueString() {
-        let time = new Date();
-        const hours = time.getHours().toString();
-        const mins = time.getMinutes().toString();
-
-        return getHueCode(hours, mins);
     }
 
     onMount(() => {
@@ -65,7 +95,10 @@
 </script>
 
 <div class="container">
-    <div class="top-hue inner">
+    <div
+        class="top-hue inner"
+        style="background-color: rgb({`${hue.r},${hue.g},${hue.b}`})"
+    >
         <div class="text-outer">
             <div class="text-inner left">UC HUE</div>
             <div class="text-inner right">YOUR CLOCK HAS ALL OF THESE</div>
@@ -79,9 +112,12 @@
             <canvas bind:this={saturatedSpectrum} />
         </div>
     </div>
-    <div class="bot-hue inner">
+    <div
+        class="bot-hue inner"
+        style="background-color: rgb({`${saturatedHue.r},${saturatedHue.g},${saturatedHue.b}`})"
+    >
         <div class="text-outer">
-            <div class="text-inner left">CODE {getHueString()}</div>
+            <div class="text-inner left">CODE {hueString}</div>
             <div class="text-inner right">AND ONE OF THESE</div>
         </div>
     </div>
@@ -119,7 +155,6 @@
 
     .left {
         justify-content: left;
-
     }
 
     .right {
@@ -144,13 +179,5 @@
     canvas {
         width: 100%;
         height: 100%;
-    }
-
-    .top-hue {
-        background-color: #a27aef;
-    }
-
-    .bot-hue {
-        background-color: #8a00ff;
     }
 </style>

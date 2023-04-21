@@ -8,6 +8,12 @@
     import BottomBar from "./BottomBar.svelte";
     import Previewbar from "./Previewbar.svelte";
     import VideoWithOverlay from "./VideoWithOverlay.svelte";
+
+    // Update store values every min
+    import { beforeUpdate, onMount } from "svelte";
+    import { updateTimeEveryMin } from "./clock";
+
+    onMount(updateTimeEveryMin);
 </script>
 
 <Navbar />

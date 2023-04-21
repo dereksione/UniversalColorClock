@@ -1,34 +1,36 @@
 <script>
+
     import Clock from "./Clock.svelte";
     import GreyButton from "./GreyButton.svelte";
-    import { normalHue } from "../ucc-script/retrieve";
-    import { onMount } from "svelte";
 
-    let time = new Date();
+    import { normalColor, timeString } from "./stores";
 
-    $: [r, g, b] = normalHue(time);
+    let hue = {
+        r: undefined,
+        g: undefined,
+        b: undefined
+    };
+    
+    /**
+     * @type {string}
+     */
+    let strTime;
 
-    onMount(() => {
-        const interval = setInterval(() => {
-            time = new Date();
-        }, 1000);
-
-        return () => {
-            clearInterval(interval);
-        };
+    normalColor.subscribe( val => {
+        // @ts-ignore
+        hue = val;
     });
 
-    let quantity = 1;
+    timeString.subscribe( val => {
+        strTime = val;
+    });
 
-    function handleQuantitySelection() {
-        
-    }
 </script>
 
 <div class="container">
     <div class="text-container" id="purchase-section">
         <div class="tagline-big">
-            <p style="color: rgb({`${r},${g},${b}`})">
+            <p style="color: rgb({`${hue.r},${hue.g},${hue.b}`})">
                 The UC Clock displays 1440 different hues, one for each minute
                 of the day.
             </p>
@@ -39,11 +41,11 @@
             minute and corresponding 1441st color that can be toggled on or off
             like a visual alarm.
         </div>
-        <div class="bottom-container" >
+        <div class="bottom-container">
             <div class="clock">
-                <Clock />
+                <Clock {hue} {strTime}/>
             </div>
-            <div class="buy-container" >
+            <div class="buy-container">
                 <div class="caption-wrapper">
                     <div class="buy-top-caption caption">SELECT QUANTITY</div>
                 </div>
@@ -69,8 +71,12 @@
                         <GreyButton buttonText={"ETH"} buttonWidth="140px" />
                     </div>
                 </div>
-                <div class="mint-disclaimer" style="color:rgb({`${r},${g},${b}`})">
-                    *This is a randomized mint. You will be assigned a minute based on the algorithm of the mint. 
+                <div
+                    class="mint-disclaimer"
+                    style="color:rgb({`${hue.r},${hue.g},${hue.b}`})"
+                >
+                    *This is a randomized mint. You will be assigned a minute
+                    based on the algorithm of the mint.
                 </div>
             </div>
         </div>
@@ -100,7 +106,8 @@
         width: 1050px;
     }
 
-    .tagline-big, .tagline-desc {
+    .tagline-big,
+    .tagline-desc {
         font-family: SeravekBasicExtraLight;
     }
 
@@ -116,7 +123,8 @@
         font-size: 32px;
     }
 
-    .caption-wrapper, .mint-disclaimer {
+    .caption-wrapper,
+    .mint-disclaimer {
         font-family: SeravekBasicLight;
     }
 
@@ -175,5 +183,4 @@
         margin-top: 30px;
         justify-content: center;
     }
-
 </style>
