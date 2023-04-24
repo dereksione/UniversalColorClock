@@ -36,7 +36,7 @@
      * @type {string}
      */
     $: gradientStyle = `linear-gradient(to right, ${hueString}, ${saturatedHueString})`;
-    $: textContent = "◀ &nbsp PREVIEW THE CLOCK ON YOUR DEVICE &nbsp ▶";
+    $: textContent = "&nbsp PREVIEW THE CLOCK ON YOUR DEVICE &nbsp";
     $: previewTextStyle = `background: ${gradientStyle}; -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: transparent;`;
 </script>
 

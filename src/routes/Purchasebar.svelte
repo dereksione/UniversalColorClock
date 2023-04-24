@@ -1,5 +1,4 @@
 <script>
-
     import Clock from "./Clock.svelte";
     import GreyButton from "./GreyButton.svelte";
 
@@ -8,23 +7,22 @@
     let hue = {
         r: undefined,
         g: undefined,
-        b: undefined
+        b: undefined,
     };
-    
+
     /**
      * @type {string}
      */
     let strTime;
 
-    normalColor.subscribe( val => {
+    normalColor.subscribe((val) => {
         // @ts-ignore
         hue = val;
     });
 
-    timeString.subscribe( val => {
+    timeString.subscribe((val) => {
         strTime = val;
     });
-
 </script>
 
 <div class="container">
@@ -43,21 +41,34 @@
         </div>
         <div class="bottom-container">
             <div class="clock">
-                <Clock {hue} {strTime}/>
+                <Clock {hue} {strTime} />
             </div>
             <div class="buy-container">
                 <div class="caption-wrapper">
                     <div class="buy-top-caption caption">SELECT QUANTITY</div>
                 </div>
                 <div class="top-buttons">
-                    <div class="one-button">
-                        <GreyButton buttonText={"1"} />
+                    <div class="top-buttons-row first-row">
+                        <div class="one-button">
+                            <GreyButton buttonText={"1"} />
+                        </div>
+                        <div class="one-button">
+                            <GreyButton buttonText={"2"} />
+                        </div>
+                        <div class="one-button">
+                            <GreyButton buttonText={"3"} />
+                        </div>
                     </div>
-                    <div class="one-button">
-                        <GreyButton buttonText={"2"} />
-                    </div>
-                    <div class="one-button">
-                        <GreyButton buttonText={"3"} />
+                    <div class="top-buttons-row second-row">
+                        <div class="one-button">
+                            <GreyButton buttonText={"4"} />
+                        </div>
+                        <div class="one-button">
+                            <GreyButton buttonText={"5"} />
+                        </div>
+                        <div class="one-button">
+                            <GreyButton buttonText={"6"} />
+                        </div>
                     </div>
                 </div>
                 <div class="caption-wrapper">
@@ -72,10 +83,16 @@
                     </div>
                 </div>
                 <div
-                    class="mint-disclaimer"
+                    class="mint-disclaimer top-text"
                     style="color:rgb({`${hue.r},${hue.g},${hue.b}`})"
                 >
-                    *This is a randomized mint. You will be assigned a minute
+                    *A maximum of six mints can be purchased at once
+                </div>
+                <div
+                    class="mint-disclaimer bot-text"
+                    style="color:rgb({`${hue.r},${hue.g},${hue.b}`})"
+                >
+                    **This is a randomized mint. You will be assigned a minute
                     based on the algorithm of the mint.
                 </div>
             </div>
@@ -93,7 +110,7 @@
     .container {
         padding: 0;
         margin: 0;
-        height: 960px;
+        height: 1060px;
         background-color: black;
         display: flex;
         justify-content: center;
@@ -102,8 +119,9 @@
     .text-container {
         justify-content: center;
         font-weight: 200;
-        /* margin-left: 350px; */
-        width: 1050px;
+        margin-left: max(140px, 15%);
+        margin-right: max(140px, 15%);
+        width: 100%;
     }
 
     .tagline-big,
@@ -163,9 +181,15 @@
         margin-bottom: 20px;
     }
 
-    .top-buttons,
+    .top-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top-buttons-row,
     .bottom-buttons {
         display: flex;
+        margin-bottom: 20px;
         justify-content: center;
     }
 
@@ -179,8 +203,13 @@
 
     .mint-disclaimer {
         font-size: 14px;
-        /* margin-left: 30px; */
+        display: flex;
         margin-top: 30px;
         justify-content: center;
+        text-align: center;
+    }
+
+    .bot-text {
+        margin-top: 10px;
     }
 </style>

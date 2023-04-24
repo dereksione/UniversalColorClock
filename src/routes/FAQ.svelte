@@ -47,12 +47,12 @@
             </p>
         </div>
 
-        <div class="q&a">
+        <!-- <div class="q&a">
             <p class="question">
                 Is there an advantage to purchasing multiple NFTs?
             </p>
             <p class="answer" />
-        </div>
+        </div> -->
 
         <div class="q&a">
             <p class="question">

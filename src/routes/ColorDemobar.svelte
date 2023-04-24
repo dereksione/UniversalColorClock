@@ -101,7 +101,7 @@
         style="background-color: rgb({`${hue.r},${hue.g},${hue.b}`})"
     >
         <div class="text-outer">
-            <div class="text-inner">YOUR CLOCK HAS ALL OF THESE</div>
+            <div class="text-inner">YOUR CLOCK HAS ALL OF THESE BASE COLORS</div>
         </div>
     </div>
     <div class="middle-hue inner">
@@ -117,7 +117,7 @@
         style="background-color: rgb({`${saturatedHue.r},${saturatedHue.g},${saturatedHue.b}`})"
     >
         <div class="text-outer">
-            <div class="text-inner">AND ONE OF THESE</div>
+            <div class="text-inner">AND ONE UNIQUE COLOR</div>
         </div>
     </div>
 </div>
@@ -158,12 +158,12 @@
     }
 
     .normal-spectrum {
-        height: 70%;
+        height: 50%;
         width: 100%;
     }
 
     .saturated-spectrum {
-        height: 30%;
+        height: 50%;
         width: 100%;
     }
 

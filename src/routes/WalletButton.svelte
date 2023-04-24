@@ -3,6 +3,7 @@
     // @ts-ignore
     export let defaultText = "CONNECT WALLET";
     export let connectedText = "VIEW YOUR NFTS";
+    export let textColor = "white";
   
     let isConnected = false;
     let account = "";
@@ -40,7 +41,7 @@
     }
   </script>
   
-  <button on:click={handleClick}>
+  <button on:click={handleClick} style="color: {textColor}">
     {#if isConnected}
       {connectedText}
     {:else}
@@ -50,7 +51,6 @@
 
   <style>
     button {
-      color: white;
       text-decoration: inherit;
       background-color: transparent;
       border: none;

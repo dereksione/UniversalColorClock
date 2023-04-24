@@ -2,9 +2,17 @@
     import { tick } from "svelte";
     import Clock from "./Clock.svelte";
     import WalletButton from "./WalletButton.svelte";
-    // let currentTime;
+    import { normalColor } from "./stores";
 
-    let clockColor = "orange";
+    /**
+     * @type {string}
+     */
+    let hueString;
+
+    normalColor.subscribe(hue => {
+       hueString = `rgb(${hue.r},${hue.g},${hue.b})`;
+    })
+
 </script>
 
 <home>
@@ -15,22 +23,22 @@
         <nav class="nav-menu">
             <ul class="primary-navigation blank-list flex">
                 <li>
-                    <a href="#aboutRicci"> RICCI ALBENDA </a>
+                    <a href="#aboutRicci" style="color: {hueString};"> RICCI ALBENDA </a>
                 </li>
                 <li>
-                    <a href="/colorclock"> ABOUT UCC</a>
+                    <a href="/colorclock" style="color: {hueString};"> ABOUT UCC</a>
                 </li>
                 <li>
-                    <a href="#infobar"> FAQ </a>
+                    <a href="#infobar" style="color: {hueString};"> FAQ </a>
                 </li>
                 <li>
-                    <a href="#infobar"> DMINTI </a>
+                    <a href="#infobar" style="color: {hueString};"> DMINTI </a>
                 </li>
                 <li>
-                    <a href="#purchase-section"> PURCHASE NOW </a>
+                    <a href="#purchase-section" style="color: {hueString};"> PURCHASE NOW </a>
                 </li>
-                <li>
-                    <WalletButton />
+                <li >
+                    <WalletButton textColor={hueString}/>
                 </li>
             </ul>
         </nav>
