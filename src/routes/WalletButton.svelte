@@ -17,7 +17,7 @@
     }
     
     function tokenGated() {
-      location.href = "/colorclock"
+      location.href = "/colorclocktokens";
     }
   
     async function connectWallet() {

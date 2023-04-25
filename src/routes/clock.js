@@ -39,7 +39,7 @@ export function updateTimeEveryMin() {
  * @param {number} hours
  * @param {number} mins
  */
-function formatTime(hours, mins) {
+export function formatTime(hours, mins) {
     let ampm = hours >= 12 ? "PM" : "AM";
     let shours = hours % 12;
     shours = shours ? shours : 12;

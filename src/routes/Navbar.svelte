@@ -1,6 +1,4 @@
 <script>
-    import { tick } from "svelte";
-    import Clock from "./Clock.svelte";
     import WalletButton from "./WalletButton.svelte";
     import { normalColor } from "./stores";
 
