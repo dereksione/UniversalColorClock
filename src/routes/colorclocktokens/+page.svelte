@@ -1,9 +1,8 @@
 <script>
     import { normalHue, saturatedHue } from "../../ucc-script/retrieve";
-    import { onMount } from "svelte";
+    import { onMount, afterUpdate } from "svelte";
     import { fetchNFTs } from "../../web3/token-gating";
-
-    export let address = "0xf11f860A48047487490b9715F901c61896718817";
+    
     /**
      * @type {number[]}
      */
@@ -24,9 +23,11 @@
      * @param {Date} currentTime
      */
     function calculateHue(currentTime) {
-        const mins = (currentTime.getHours() * 60) + currentTime.getMinutes();
-        
-        return (NFTsOwned.includes(mins)) ? saturatedHue(currentTime) : normalHue(currentTime);
+        const mins = currentTime.getHours() * 60 + currentTime.getMinutes();
+
+        return NFTsOwned.includes(mins)
+            ? saturatedHue(currentTime)
+            : normalHue(currentTime);
     }
 
     onMount(() => {
@@ -112,16 +113,14 @@
         };
     });
 
-    onMount(async () => {
-        NFTsOwned = await fetchNFTs(address);
+    onMount( async () => {
+        NFTsOwned = await fetchNFTs();
     })
 
     function handleButtonClick() {
         enterFullScreen();
         exitFullScreen();
     }
-
-   
 </script>
 
 <svelte:window on:keydown={keyEventHandler} />

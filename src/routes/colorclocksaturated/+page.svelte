@@ -12,8 +12,6 @@
 
     $: [r, g, b] = saturatedHue(time);
 
-
-
     onMount(() => {
         const interval = setInterval(() => {
             time = new Date();
@@ -77,7 +75,7 @@
         }
     }
 
-    // Expand button 
+    // Expand button
     function toggleExpandVisibility() {
         clearTimeout(timeout);
         expandVisible = true;
@@ -125,8 +123,8 @@
     }
 
     .expand:focus {
-      outline: none;
-      border: none;
+        outline: none;
+        border: none;
     }
 
     .container {
