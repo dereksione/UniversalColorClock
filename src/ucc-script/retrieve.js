@@ -21,6 +21,26 @@ export function saturatedHue(t) {
 }
 
 /**
+ * @param {number} mins
+ */
+export function getNormalHueFromMins(mins) {
+    var hours = Math.floor(mins / 60);          
+    var minutes = mins % 60;
+
+    return getNormalHueFromHoursMins(hours.toString(), minutes.toString());
+}
+
+/**
+ * @param {number} mins
+ */
+export function getSaturatedHueFromMins(mins) {
+    var hours = Math.floor(mins / 60);          
+    var minutes = mins % 60;
+
+    return getSaturatedHueFromHoursMins(hours.toString(), minutes.toString());
+}
+
+/**
  * @param {String} hours
  * @param {String} mins
  */
