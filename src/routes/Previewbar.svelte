@@ -75,7 +75,7 @@
         position: fixed;
         bottom: 0;
         background-color: black;
-        width: 100%;
+        min-width: 100%;
         height: 65px;
         z-index: 100;
         align-items: center;
@@ -93,9 +93,9 @@
 
     .centered {
         font-family: "Montserrat", sans-serif;
+        width: 100%;
         font-size: 21px;
         font-weight: 700;
-        /* padding-top: 5px; */
         display: flex;
         justify-content: center;
         align-items: center;

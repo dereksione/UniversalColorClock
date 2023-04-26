@@ -101,15 +101,8 @@
 </div>
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
     .container {
-        padding: 0;
-        margin: 0;
+        width: 100%;
         height: 1060px;
         background-color: black;
         display: flex;
@@ -119,8 +112,8 @@
     .text-container {
         justify-content: center;
         font-weight: 200;
-        margin-left: max(140px, 15%);
-        margin-right: max(140px, 15%);
+        margin-left: 15%;
+        margin-right: 15%;
         width: 100%;
     }
 
