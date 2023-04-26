@@ -48,7 +48,8 @@
         font-family: SeravekBasicLight, sans-serif;
         font-weight: 100;
         font-size: 32px;
-        width: 1310px;
+        width: 80%;
+        max-width: 1310px;
         display: flex;
     }
 </style>

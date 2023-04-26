@@ -76,6 +76,14 @@
         align-items: center;
     }
 
+    .inner-container {
+        width: 80%;
+        max-width: 1310px;
+        height: 80%;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 200;
+    }
+
     .container,
     .inner-container,
     .frame-text,
@@ -83,13 +91,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-
-    .inner-container {
-        width: 80%;
-        height: 80%;
-        font-family: "Montserrat", sans-serif;
-        font-weight: 200;
     }
 
     .col {

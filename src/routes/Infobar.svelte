@@ -1,40 +1,45 @@
 <script>
     import DmintiAbout from "./DMINTIAbout.svelte";
-    import DanaeAbout from "./DanaeAbout.svelte";
     import Faq from "./FAQ.svelte";
 
 </script>
 
 <div class="container" id="infobar">
-    <div class="flex-child leftcol">
-        <DmintiAbout />
-        <br />
-        <br />
-    </div>
-    <div class="flex-child rightcol">
-        <Faq />
+    <div class="text-container">
+        <div class="flex-child leftcol">
+            <DmintiAbout />
+            <br />
+            <br />
+        </div>
+        <div class="flex-child rightcol">
+            <Faq />
+        </div>
     </div>
 </div>
 
 <style>
     .container {
-        display: flex;
         font-family: 'Roboto Condensed', sans-serif;
         font-style: light;
-        padding-left: 250px;
-        padding-right: 250px;
-        padding-top: 150px;
         background-color: black;
-        justify-content: center;
-        align-content: center;
         color: white;
+        display: flex;
+        justify-content: center;
+        height: 950px;
+    }
+
+    .text-container {
+        display: flex;
+        width: 80%;
+        max-width: 1310px;
+        margin-top: 100px;
     }
 
     .flex-child {
         font-size: 18px;
         font-weight: 100;
         flex: 1;
-        width: 620px;
-        margin: 25px;
+        width: 50%;
+        margin-right: 25px;
     }
 </style>

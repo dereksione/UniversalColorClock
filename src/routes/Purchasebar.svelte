@@ -86,14 +86,13 @@
                     class="mint-disclaimer top-text"
                     style="color:rgb({`${hue.r},${hue.g},${hue.b}`})"
                 >
-                    *A maximum of six mints can be purchased at once
-                </div>
-                <div
-                    class="mint-disclaimer bot-text"
-                    style="color:rgb({`${hue.r},${hue.g},${hue.b}`})"
-                >
-                    **This is a randomized mint. You will be assigned a minute
-                    based on the algorithm of the mint.
+                    <div class="top-text">
+                        *A maximum of six mints can be purchased at once
+                    </div>
+                    <div class="bot-text">
+                        **This is a randomized mint. You will be assigned a
+                        minute based on the algorithm of the mint.
+                    </div>
                 </div>
             </div>
         </div>
@@ -103,7 +102,7 @@
 <style>
     .container {
         width: 100%;
-        height: 1060px;
+        height: 1260px;
         background-color: black;
         display: flex;
         justify-content: center;
@@ -112,9 +111,9 @@
     .text-container {
         justify-content: center;
         font-weight: 200;
-        margin-left: 15%;
-        margin-right: 15%;
-        width: 100%;
+        width: 80%;
+        max-width: 1310px;
+        text-align: left;
     }
 
     .tagline-big,
@@ -125,6 +124,7 @@
     .tagline-big {
         font-size: 60px;
         padding-top: 160px;
+        padding-right: 30px;
     }
 
     .tagline-desc {
@@ -132,6 +132,7 @@
         font-family: SeravekBasicExtraLight;
         padding-top: 40px;
         font-size: 32px;
+        padding-right: 70px;
     }
 
     .caption-wrapper,
@@ -196,8 +197,11 @@
 
     .mint-disclaimer {
         font-size: 14px;
+        flex-direction: column;
         display: flex;
         margin-top: 30px;
+        padding-right: 10%;
+        padding-left: 10%;
         justify-content: center;
         text-align: center;
     }
