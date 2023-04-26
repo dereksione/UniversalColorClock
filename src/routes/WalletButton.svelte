@@ -1,7 +1,7 @@
 <script>
   // @ts-ignore
   export let defaultText = "CONNECT WALLET";
-  export let connectedText = "VIEW YOUR NFTS";
+  export let connectedText = "VIEW CLOCK";
   export let textColor = "white";
 
   import { walletAddress } from "./stores";

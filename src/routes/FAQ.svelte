@@ -64,7 +64,7 @@
                 at random during the opening private sales window beginning on
                 April 29th and will be withdrawn from the 1,440 total editions,
                 leaving a total of 1,420 editions available to the public. The {@html UCC}
-                project is just hte initial public offering from a larger body of
+                project is just the initial public offering from a larger body of
                 work from the artist, who's practice also extends the concept and
                 propietary color systems in both alphanumeric and geographical expressions
                 as well addressing the concept of color blindness in future iterations.

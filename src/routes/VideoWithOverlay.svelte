@@ -13,7 +13,7 @@
     const mintDate = new Date("2023-04-30"); // April 30th, 2023 - 00:00:00
 
     /**
-     * 
+     *
      * @param {Date} timeNow
      */
     function calculateCountdown(timeNow) {
@@ -24,7 +24,7 @@
     }
 
     /**
-     * 
+     *
      * @param {Date} date1
      * @param {Date} date2
      */
@@ -48,15 +48,17 @@
 </script>
 
 <div class="parent-container">
-    <video class="responsive-video" src={timelapse} autoplay loop muted />
-    <div class="text-overlay vertically-centered">
-        <div class="UCC">UNIVERSAL COLOR CLOCK</div>
-        <div class="tacky-line">Fluid color. Precision time.</div>
-    </div>
-    <div class="text-overlay countdown">
-        <div class="countdown-text">COUNTDOWN TO MINT</div>
-        <div class="countdown-numbers">
-            {daysLeft} DAYS {hoursLeft} HOURS {minsLeft} MINUTES
+    <div class="overlay-container">
+        <video class="responsive-video" src={timelapse} autoplay loop muted />
+        <div class="text-overlay vertically-centered">
+            <div class="UCC">UNIVERSAL COLOR CLOCK</div>
+            <div class="tacky-line">Fluid color. Precision time.</div>
+        </div>
+        <div class="text-overlay countdown">
+            <div class="countdown-text">COUNTDOWN TO MINT</div>
+            <div class="countdown-numbers">
+                {daysLeft} DAYS {hoursLeft} HOURS {minsLeft} MINUTES
+            </div>
         </div>
     </div>
 </div>
@@ -74,7 +76,6 @@
         font-size: 24px;
         font-weight: bold;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
-        /* text-align: center; */
     }
 
     .vertically-centered {
