@@ -24,7 +24,7 @@
                     <a href="#aboutRicci" style="color: {hueString};"> RICCI ALBENDA </a>
                 </li>
                 <li>
-                    <a href="/colorclock" style="color: {hueString};"> ABOUT UCC</a>
+                    <a href="/src/assets/about.jpeg" style="color: {hueString};" download> ABOUT UCC</a>
                 </li>
                 <li>
                     <a href="#infobar" style="color: {hueString};"> FAQ </a>
