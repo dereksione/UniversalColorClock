@@ -34,10 +34,15 @@
             </p>
         </div>
         <div class="tagline-desc">
-            You can view it on any device with a browser, projected on the wall
-            or in a custom frame. Each mint is unique, having its own chosen
-            minute and corresponding 1441st color that can be toggled on or off
-            like a visual alarm.
+            Each mint is tethered to a specific randomly assigned minute of the day. 
+            All 1440 NFTs display the color clock in its entirety and the specific minute that each NFT
+            is tethered to will appear brighter and more saturated during that minute than the rest of
+            the clock. This enables you to own a unique color, exclusive to your NFT, that correlates
+             to a distinct minute in the 24-hour clock.
+        </div>
+        <div class="tagline-desc"> 
+            The Universal Color Clock can be viewed on any device with a browser, projected on the wall,
+             or with any number of available custom NFT viewers or frames.
         </div>
         <div class="bottom-container">
             <div class="clock">
@@ -102,7 +107,7 @@
 <style>
     .container {
         width: 100%;
-        height: 1260px;
+        height: 1460px;
         background-color: black;
         display: flex;
         justify-content: center;
