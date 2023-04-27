@@ -182,7 +182,7 @@
 
     .vertically-centered {
         top: 55%;
-        margin-left: 450px;
+        margin-left: 400px;
         /* padding-left: 23%; */
         transform: translateY(-50%);
     }
@@ -192,7 +192,7 @@
         text-align: left;
         font-weight: 300;
         bottom: 30px;
-        margin-right: 800px;
+        margin-right: 770px;
         color: rgba(252, 252, 252, 0.5);
     }
 
