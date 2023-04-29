@@ -1,20 +1,25 @@
-<div class="about section">
-    <div class="list-heading">ABOUT</div>
+<div class="community section">
+    <div class="list-heading">COMMUNITY</div>
     <ul>
         <li>
-            <a href="https://dminti.com/about-us/">About Us</a>
+            <a href="https://dminti.com/metaverse/">DMINTI metaverse</a>
         </li>
         <li>
-            <a href="https://dminti.com/about-us/#team">Our Team</a>
+            <a href="https://dminti.com/events/">Events</a>
         </li>
         <li>
-            <a
-                href="https://dminti.com/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjE5OTMiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D"
-                >Contact</a
+            <a href="https://dminti.com/programming/">Programming</a>
+        </li>
+        <li>
+            <a href="https://dminti.com/nft-sundays-podcast/"
+                >DMINTI X MOCA podcast</a
             >
         </li>
         <li>
-            <a href="https://dminti.com/#artist-projects">Artist's Projects</a>
+            <a href="https://dminti.com/metaverse/">Metaverse Mondays</a>
+        </li>
+        <li>
+            <a href="https://twitter.com/dminti_io">NFT Thursdays</a>
         </li>
     </ul>
 </div>

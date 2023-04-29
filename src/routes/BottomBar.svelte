@@ -1,7 +1,9 @@
 <script>
     import DMlogo from "../assets/DMlogo.png";
-    import twitter from "../assets/twitter.png";
-    import insta from "../assets/insta.png";
+    import AboutMenu from "./AboutMenu.svelte";
+    import Community from "./Community.svelte";
+    import SignUp from "./SignUp.svelte";
+    import Socials from "./Socials.svelte";
 </script>
 
 <div class="container">
@@ -9,231 +11,61 @@
         <div class="dminti-logo section">
             <img src={DMlogo} alt="DMINTI logo" />
         </div>
-        <div class="contact-form section">
-            <form>
-                <div class="input-wrapper">
-                    <input type="text" name="name" placeholder="Name" />
-                    <div class="line" />
-                </div>
-                <div class="input-wrapper">
-                    <input type="email" name="email" placeholder="Email" />
-                    <div class="line" />
-                </div>
-                <div class="submit-wrapper">
-                    <input type="submit" value="SIGN UP FOR UPDATES" />
-                </div>
-            </form>
-        </div>
-        <div class="about section">
-            <div class="list-heading">ABOUT</div>
-            <ul>
-                <li>
-                    <a href="https://dminti.com/about-us/">About Us</a>
-                </li>
-                <li>
-                    <a href="https://dminti.com/about-us/#team">Our Team</a>
-                </li>
-                <li>
-                    <a href="https://dminti.com/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjE5OTMiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D">Contact</a>
-                </li>
-                <li>
-                    <a href="https://dminti.com/#artist-projects">Artist's Projects</a>
-                </li>
-            </ul>
-        </div>
-        <div class="community section">
-            <div class="list-heading">COMMUNITY</div>
-            <ul>
-                <li>
-                    <a href="https://dminti.com/metaverse/">DMINTI metaverse</a>
-                </li>
-                <li>
-                    <a href="https://dminti.com/events/">Events</a>
-                </li>
-                <li>
-                    <a href="https://dminti.com/programming/">Programming</a>
-                </li>
-                <li>
-                    <a href="https://dminti.com/nft-sundays-podcast/">DMINTI X MOCA podcast</a>
-                </li>
-                <li>
-                    <a href="https://dminti.com/metaverse/">Metaverse Mondays</a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/dminti_io">NFT Thursdays</a>
-                </li>
-            </ul>
-        </div>
-        <div class="follow section">
-            <div class="list-heading">FOLLOW</div>
-            <a href="mailto:info@dminti.com">info@dminti.com</a>
-            <div class="socials">
-                <a href="">
-                    <img
-                        id="twitter"
-                        class="social-image"
-                        src={twitter}
-                        alt="Twitter logo"
-                    />
-                </a>
-                <a href="">
-                    <img
-                        class="social-image"
-                        id="insta"
-                        src={insta}
-                        alt="Instagram logo"
-                    />
-                </a>
-            </div>
-        </div>
+        <SignUp />
+        <AboutMenu />
+        <Community />
+        <Socials />
     </div>
 </div>
 
 <style>
-    li {
-        list-style: none;
-        font-size: 16px;
-    }
-
-    .list-heading {
-        font-size: 18px;
-    }
-
-    .list-heading,
-    li {
-        margin-bottom: 10px;
-    }
-
-    ul {
-        margin: 0;
-        padding: 0;
-    }
-
-    a {
-        color: white;
-        text-decoration: inherit;
-    }
-
-    .contact-form {
-        width: 640px;
-        /* background-color: aqua; */
-    }
-
-    .dminti-logo {
-        /* width: 80px; */
-    }
-
     .container {
         background-color: black;
         display: flex;
         color: white;
         justify-content: center;
+        padding-bottom: 40px;
+        width: 100%;
     }
 
     .inner-container {
+       
         display: flex;
-        width: 90%;
         flex-wrap: wrap;
         justify-content: space-between;
         font-family: "Roboto Condensed", sans-serif;
         font-style: light;
         font-weight: 100;
+        margin-top: 40px;
     }
 
-    .section {
-        margin-top: 30px;
-        width:200px;
-        padding: 0 10px; /* Add this */
-        box-sizing: border-box; /* Add this */
-    }
-
-    .dminti-logo.section,
-    .follow.section {
-        padding: 0; /* Remove padding from the first and last sections */
-    }
-
-    .input-wrapper {
-        position: relative;
-        margin-bottom: 20px;
-    }
-
-    .line {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        margin-top: 10px;
-        width: 610px;
-        height: 1px;
-        background-color: white;
-    }
-
-    input[type="text"],
-    input[type="email"] {
-        border: none;
-        outline: none;
-        background: none;
-        color: white;
-    }
-
-    input[type="submit"] {
-        cursor: pointer;
-    }
-
-    input[type="submit"] {
-        cursor: pointer;
-        border: none;
-        background: none;
-        color: inherit;
-        font: inherit;
-    }
-
-    .socials {
-        margin-top: 10px;
-        display: flex;
-    }
-
-    .social-image {
-        max-width: 20px;
-        padding-right: 5px;
-        width: 100%;
-        height: auto;
-    }
-
-    #twitter {
-        padding-top: 7px;
-    }
-
-    #insta {
-        max-width: 45px;
-    }
-
-    .submit-wrapper {
-        text-align: right;
-        align-self: flex-end;
-        font-size: 16px;
-    }
-
-    @media(min-height: 1300px) {
-        .container{
-            height: 350px;
+    @media (min-width: 1400px) {
+        .inner-container {
+            width: 90%;
         }
     }
 
-    @media (max-height: 1199px) {
+    @media (max-width: 1400px) {
         .inner-container {
             flex-direction: column;
             align-items: center;
-            margin-bottom:50px;
+            margin-bottom: 150px;
+            justify-content: center;
+            margin-left: 100px;
         }
 
-        .section {
-            margin-top: 20px;
-            margin-bottom: 20px;
-            width: 50%;
+        .dminti-logo {
+            display: flex;
+            justify-content: center;
+            width: 100%;
         }
-        
-        .follow {
-            margin-left: 20px;
+
+        .bot-cols {
+            margin-left: 200px;
+        }
+
+        .socials {
+            margin-left: 10px;
         }
     }
 </style>
