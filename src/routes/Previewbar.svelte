@@ -88,7 +88,8 @@
     }
 
     .items {
-        margin-left: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .centered {
@@ -103,5 +104,22 @@
 
     .base-button {
         height: 70%;
+    }
+
+    @media (max-width: 800px) {
+        .container {
+            height: 100px;
+        }
+
+        .centered {
+            text-overflow: wrap;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 580px) {
+        .container {
+            height: 120px;
+        }
     }
 </style>
