@@ -28,16 +28,16 @@
             <div class="list-heading">ABOUT</div>
             <ul>
                 <li>
-                    <a href="">About Us</a>
+                    <a href="https://dminti.com/about-us/">About Us</a>
                 </li>
                 <li>
-                    <a href="">Our Team</a>
+                    <a href="https://dminti.com/about-us/#team">Our Team</a>
                 </li>
                 <li>
-                    <a href="">Contact</a>
+                    <a href="https://dminti.com/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjE5OTMiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D">Contact</a>
                 </li>
                 <li>
-                    <a href="">Artist's project</a>
+                    <a href="https://dminti.com/#artist-projects">Artist's Projects</a>
                 </li>
             </ul>
         </div>
@@ -45,22 +45,22 @@
             <div class="list-heading">COMMUNITY</div>
             <ul>
                 <li>
-                    <a href="">DMINTI metaverse</a>
+                    <a href="https://dminti.com/metaverse/">DMINTI metaverse</a>
                 </li>
                 <li>
-                    <a href="">Events</a>
+                    <a href="https://dminti.com/events/">Events</a>
                 </li>
                 <li>
-                    <a href="">Programming</a>
+                    <a href="https://dminti.com/programming/">Programming</a>
                 </li>
                 <li>
-                    <a href="">DMINTI X MOCA podcast</a>
+                    <a href="https://dminti.com/nft-sundays-podcast/">DMINTI X MOCA podcast</a>
                 </li>
                 <li>
-                    <a href="">Metaverse Mondays</a>
+                    <a href="https://dminti.com/metaverse/">Metaverse Mondays</a>
                 </li>
                 <li>
-                    <a href="">NFT Thursdays</a>
+                    <a href="https://twitter.com/dminti_io">NFT Thursdays</a>
                 </li>
             </ul>
         </div>
@@ -68,22 +68,22 @@
             <div class="list-heading">FOLLOW</div>
             <a href="mailto:info@dminti.com">info@dminti.com</a>
             <div class="socials">
-                    <a href="">
-                        <img
-                            id="twitter"
-                            class="social-image"
-                            src={twitter}
-                            alt="Twitter logo"
-                        />
-                    </a>
-                    <a href="">
-                        <img
-                            class="social-image"
-                            id="insta"
-                            src={insta}
-                            alt="Instagram logo"
-                        />
-                    </a>
+                <a href="">
+                    <img
+                        id="twitter"
+                        class="social-image"
+                        src={twitter}
+                        alt="Twitter logo"
+                    />
+                </a>
+                <a href="">
+                    <img
+                        class="social-image"
+                        id="insta"
+                        src={insta}
+                        alt="Instagram logo"
+                    />
+                </a>
             </div>
         </div>
     </div>
@@ -124,7 +124,6 @@
     }
 
     .container {
-        height: 350px;
         background-color: black;
         display: flex;
         color: white;
@@ -143,6 +142,7 @@
 
     .section {
         margin-top: 30px;
+        width:200px;
         padding: 0 10px; /* Add this */
         box-sizing: border-box; /* Add this */
     }
@@ -211,5 +211,29 @@
         text-align: right;
         align-self: flex-end;
         font-size: 16px;
+    }
+
+    @media(min-height: 1300px) {
+        .container{
+            height: 350px;
+        }
+    }
+
+    @media (max-height: 1199px) {
+        .inner-container {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom:50px;
+        }
+
+        .section {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 50%;
+        }
+        
+        .follow {
+            margin-left: 20px;
+        }
     }
 </style>
