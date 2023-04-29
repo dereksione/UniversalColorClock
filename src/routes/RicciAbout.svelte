@@ -56,23 +56,5 @@
         width: 100%;
         margin: 60px;
     }
-
-    @media (min-width: 768px) {
-        .inner-container {
-            width: 80%;
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .inner-container {
-            width: 70%;
-        }
-    }
-
-    @media (min-width: 1300px) {
-        .inner-container {
-            width: 60%;
-        }
-    }
 </style>
 

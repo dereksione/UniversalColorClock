@@ -132,14 +132,13 @@
     .tagline-big,
     .tagline-desc {
         font-family: SeravekBasicExtraLight;
-        padding-left: 50px
+        padding-left: 30px
     }
 
     .tagline-big {
         font-size: 60px;
         padding-top: 160px;
         padding-right: 30px;
-        padding-left: 50px;
     }
 
     .tagline-desc {
@@ -197,7 +196,7 @@
         font-weight: 800;
         margin-top: 20px;
         padding-left: 20px;
-        margin-right: 120px;
+        margin-right: 80px;
         white-space: nowrap;
     }
 
@@ -257,6 +256,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        .tagline-big, .tagline-desc {
+            padding-left: 50px;
         }
 
         .text-container {
