@@ -7,7 +7,15 @@
 
 <div class="container">
     <!-- svelte-ignore a11y-media-has-caption -->
-    <video class="responsive-video" src={timelapse} autoplay loop muted />
+    <video
+        class="responsive-video"
+        src={timelapse}
+        autoplay
+        loop
+        muted
+        playsinline
+        controls
+    />
 </div>
 
 <style>
