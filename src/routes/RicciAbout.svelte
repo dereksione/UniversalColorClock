@@ -6,14 +6,16 @@
      */
     let hue;
 
-    normalColor.subscribe(val => {
+    normalColor.subscribe((val) => {
         hue = val;
-    })
-
-    
+    });
 </script>
 
-<div class="container" id="aboutRicci" style="background-color: rgb({`${hue.r},${hue.g},${hue.b}`})">
+<div
+    class="container"
+    id="aboutRicci"
+    style="background-color: rgb({`${hue.r},${hue.g},${hue.b}`})"
+>
     <div class="inner-container">
         <p>
             Ricci Albenda (b. 1966, Brooklyn) lives and works in New York. In
@@ -40,16 +42,36 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 586px;
+        padding: 2rem;
+        box-sizing: border-box;
     }
 
     .inner-container {
-        /* font-family: 'Raleway', sans-serif; */
         font-family: SeravekBasicLight, sans-serif;
         font-weight: 100;
         font-size: 32px;
-        width: 80%;
         max-width: 1310px;
-        display: flex;
+        overflow-wrap: break-word;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        .inner-container {
+            width: 80%;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .inner-container {
+            width: 70%;
+        }
+    }
+
+    @media (min-width: 1300px) {
+        .inner-container {
+            width: 60%;
+        }
     }
 </style>
+
