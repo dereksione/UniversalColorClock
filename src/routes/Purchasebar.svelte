@@ -83,7 +83,7 @@
                                 <GreyButton
                                     buttonText={"USD"}
                                     buttonWidth="140px"
-                                    handleClick={() => { location.href="https://dminti.com/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjE5OTMiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D"}}
+                                    handleClick={() => { location.href="https://dminti.com/universalcolorclock-purchase/"}}
                                 />
                             </div>
                         </div>
@@ -97,7 +97,7 @@
                         *A maximum of six mints can be purchased at once
                     </div>
                     <div class="bot-text">
-                        **This is a randomized mint. You will be assigned a
+                        **This is a randomized mint. <br /> You will be assigned a
                         minute based on the algorithm of the mint.
                     </div>
                 </div>
@@ -205,21 +205,10 @@
         font-size: 19px;
     }
 
-    .buy-top-caption {
-        margin-top: 50px;
-        margin-bottom: 20px;
-    }
-
     .buy-bottom-caption {
         margin-bottom: 20px;
     }
 
-    .top-buttons {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .top-buttons-row,
     .bottom-buttons {
         display: flex;
         align-items: center;
@@ -252,7 +241,7 @@
 
     @media (max-width: 1300px) {
         .container {
-            height: 1850px;
+            height: 1800px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -278,10 +267,13 @@
             margin-left: 200px;
         }
 
-        .mint-disclaimer {
-            text-align: left;
+       
+
+        /* .mint-disclaimer {
+            text-align: center;
             justify-content: center;
-        }
+            text-overflow: wrap;
+        } */
 
         .clock {
             margin-top: 0px;
@@ -300,6 +292,13 @@
         .first-row,
         .second-row {
             justify-content: center;
+        }
+
+        .mint-disclaimer {
+            font-size: 14px;
+            margin-top: 10px;
+            justify-content: center;
+            text-align: left;
         }
     }
 </style>

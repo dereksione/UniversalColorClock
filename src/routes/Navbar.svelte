@@ -2,6 +2,8 @@
     import WalletButton from "./WalletButton.svelte";
     import { normalColor } from "./stores";
 
+    const fileUrl = "https://medici-labs.mypinata.cloud/ipfs/QmXW1vADpGG6omWsrj7n9AuyQZfUNFCH3PBFBwDW2MBRyX";
+
     /**
      * @type {string}
      */
@@ -24,7 +26,7 @@
                     <a href="#aboutRicci" style="color: {hueString};"> RICCI ALBENDA </a>
                 </li>
                 <li>
-                    <a href="/src/assets/about.jpeg" style="color: {hueString};" download> ABOUT UCC</a>
+                    <a href="https://medici-labs.mypinata.cloud/ipfs/QmXW1vADpGG6omWsrj7n9AuyQZfUNFCH3PBFBwDW2MBRyX" style="color: {hueString};" download> ABOUT UCC</a>
                 </li>
                 <li>
                     <a href="#infobar" style="color: {hueString};"> FAQ </a>
