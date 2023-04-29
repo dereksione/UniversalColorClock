@@ -92,6 +92,10 @@
     }
 
     @media(max-width: 1230px) {
+        .inner-container {
+            margin-top: 40px;
+        }
+        
         .container, .inner-container {
             flex-direction: column;
             justify-content: left;
