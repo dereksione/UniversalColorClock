@@ -56,8 +56,6 @@
             console.log("signer", signer);
             userAddress = await signer.getAddress();
             console.log(userAddress);
-
-            
         } else {
             alert("Please install MetaMask to use this feature.");
         }
@@ -67,33 +65,36 @@
      * @param {number} quantity
      */
     async function callMint(quantity) {
-        await connectToWallet();
-        const rand = getRandomInt();
-        const price = 0.144 * quantity;
+        try {
+            await connectToWallet();
+            const rand = getRandomInt();
+            const price = 0.144 * quantity;
 
-        let etherAmount = ethers.utils.parseEther(price.toString()); // Ether to Wei
-        console.log("etherAmount", etherAmount);
-        const contractFunc = "mintRandomTokens";
-        
+            let etherAmount = ethers.utils.parseEther(price.toString()); // Ether to Wei
+            console.log("etherAmount", etherAmount);
+            const contractFunc = "mintRandomTokens";
 
-        // Send the transaction along with the specified Ether amount
-        const overrides = {
-            value: etherAmount, // Include the value in the overrides object
-        };
+            // Send the transaction along with the specified Ether amount
+            const overrides = {
+                value: etherAmount, // Include the value in the overrides object
+            };
 
-        contract = new ethers.Contract(config.contract, abi, signer);
-        console.log(contract[contractFunc]);
-        console.log(signer);
+            contract = new ethers.Contract(config.contract, abi, signer);
+            console.log(contract[contractFunc]);
+            console.log(signer);
 
-        const contractArgs = [userAddress, quantity, rand];
+            const contractArgs = [userAddress, quantity, rand];
 
-        const tx = await contract[contractFunc](...contractArgs, overrides);
-        const receipt = await tx.wait();
+            const tx = await contract[contractFunc](...contractArgs, overrides);
+            const receipt = await tx.wait();
 
-        console.log("tx receipt", receipt);
+            console.log("tx receipt", receipt);
+        } catch (e) {
+            alert("Something went wrong. Are you connected to your wallet?");
+        }
     }
 
-    async function handleEthBuy(){  
+    async function handleEthBuy() {
         console.log("here");
         await callMint(Number($buyQty));
     }
