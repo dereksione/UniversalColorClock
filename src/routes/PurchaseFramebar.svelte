@@ -91,7 +91,7 @@
         align-items: center;
     }
 
-    @media(max-width: 1200px) {
+    @media(max-width: 1230px) {
         .container, .inner-container {
             flex-direction: column;
             justify-content: left;
@@ -127,7 +127,13 @@
         }
     }
 
-    @media(max-width: 650px) {
+    @media(max-width: 1230px) {
+        .container {
+            height: 2000px;
+        }
+    }
+
+    @media(max-width: 850px) {
         .right-purchase-text {
             margin-left: 15px;
         }

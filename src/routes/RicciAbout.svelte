@@ -54,6 +54,7 @@
         overflow-wrap: break-word;
         box-sizing: border-box;
         width: 100%;
+        margin: 60px;
     }
 
     @media (min-width: 768px) {
