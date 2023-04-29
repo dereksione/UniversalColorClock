@@ -57,99 +57,13 @@
         <div class="text-overlay countdown">
             <div class="countdown-text">COUNTDOWN TO MINT</div>
             <div class="countdown-numbers">
-                {daysLeft} DAYS {hoursLeft} HOURS {minsLeft} MINUTES
+                0 DAYS 0 HOURS 0 MINUTES
             </div>
         </div>
     </div>
 </div>
 
-<!--     
-/* .vertically-centered {
-    top: 55%;
-    margin-right: 150px;
-    transform: translateY(-50%);
-    width: 700px;
-    bottom: 30px;
-    right: 30px;
-} */ -->
-
-<!-- <style> 
-    .parent-container {
-        position: relative;
-        display: flex;
-        background-color: black;
-    }
-
-    .overlay-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        color: white;
-    }
-
-    .text-overlay {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
-    }
-
-    /* .text-overlay {
-        position: relative;
-        color: white;
-        font-size: 24px;
-        font-weight: bold;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
-        align-items: center;
-    } */
-
-    .responsive-video {
-        width: auto;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    /* Media query for screens larger than the video width */
-    @media (min-width: 1810px) {
-        .parent-container {
-            justify-content: center;
-        }
-
-        .responsive-video {
-            object-fit: contain;
-        }
-    }
-
-    .countdown {
-        font-family: SimplexUCCA;
-        font-weight: 300;
-        color: rgba(252, 252, 252, 0.5);
-    }
-    .countdown-text {
-        font-family: SeravekBasicLight;
-        font-size: 20px;
-    }
-
-    .countdown-numbers {
-        font-size: 36px;
-    }
-
-    .tacky-line {
-        font-family: SeravekBasicLight;
-        font-size: 42px;
-        font-weight: 300;
-        color: black;
-    }
-
-    .UCC {
-        font-family: SimplexUCCA;
-        font-size: 100px;
-        font-weight: 300;
-    }
-</style> -->
-
+   
 <style>
     .parent-container {
         position: relative;

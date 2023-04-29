@@ -1,4 +1,5 @@
 <script>
+    import { onMount } from "svelte";
     import Clock from "./Clock.svelte";
     import Dropdown from "./Dropdown.svelte";
     import GreyButton from "./GreyButton.svelte";
@@ -27,6 +28,74 @@
 
     function printQty() {
         console.log($buyQty);
+    }
+
+    let provider;
+    let signer;
+    /**
+     * @type {string}
+     */
+    let userAddress;
+    /**
+     * @type {ethers.Contract}
+     */
+    let contract;
+
+    import { ethers } from "ethers";
+
+    import abi from "../web3/abi.json";
+    import config from "../web3/config.json";
+    import { getRandomInt } from "../web3/random";
+
+    async function connectToWallet() {
+        // @ts-ignore
+        if (typeof window.ethereum !== "undefined") {
+            // @ts-ignore
+            provider = new ethers.providers.Web3Provider(window.ethereum);
+            signer = provider.getSigner();
+            console.log("signer", signer);
+            userAddress = await signer.getAddress();
+            console.log(userAddress);
+
+            
+        } else {
+            alert("Please install MetaMask to use this feature.");
+        }
+    }
+
+    /**
+     * @param {number} quantity
+     */
+    async function callMint(quantity) {
+        await connectToWallet();
+        const rand = getRandomInt();
+        const price = 0.144 * quantity;
+
+        let etherAmount = ethers.utils.parseEther(price.toString()); // Ether to Wei
+        console.log("etherAmount", etherAmount);
+        const contractFunc = "mintRandomTokens";
+        
+
+        // Send the transaction along with the specified Ether amount
+        const overrides = {
+            value: etherAmount, // Include the value in the overrides object
+        };
+
+        contract = new ethers.Contract(config.contract, abi, signer);
+        console.log(contract[contractFunc]);
+        console.log(signer);
+
+        const contractArgs = [userAddress, quantity, rand];
+
+        const tx = await contract[contractFunc](...contractArgs, overrides);
+        const receipt = await tx.wait();
+
+        console.log("tx receipt", receipt);
+    }
+
+    async function handleEthBuy(){  
+        console.log("here");
+        await callMint(Number($buyQty));
     }
 </script>
 
@@ -76,14 +145,17 @@
                                 <GreyButton
                                     buttonText={"ETH"}
                                     buttonWidth="140px"
-                                    handleClick={printQty}
+                                    handleClick={handleEthBuy}
                                 />
                             </div>
                             <div class="one-button">
                                 <GreyButton
                                     buttonText={"USD"}
                                     buttonWidth="140px"
-                                    handleClick={() => { location.href="https://dminti.com/universalcolorclock-purchase/"}}
+                                    handleClick={() => {
+                                        location.href =
+                                            "https://dminti.com/universalcolorclock-purchase/";
+                                    }}
                                 />
                             </div>
                         </div>
@@ -97,8 +169,8 @@
                         *A maximum of six mints can be purchased at once
                     </div>
                     <div class="bot-text">
-                        **This is a randomized mint. <br /> You will be assigned a
-                        minute based on the algorithm of the mint.
+                        **This is a randomized mint. <br /> You will be assigned
+                        a minute based on the algorithm of the mint.
                     </div>
                 </div>
             </div>
@@ -132,7 +204,7 @@
     .tagline-big,
     .tagline-desc {
         font-family: SeravekBasicExtraLight;
-        padding-left: 30px
+        padding-left: 30px;
     }
 
     .tagline-big {
@@ -247,7 +319,8 @@
             align-items: center;
         }
 
-        .tagline-big, .tagline-desc {
+        .tagline-big,
+        .tagline-desc {
             padding-left: 50px;
         }
 
@@ -266,8 +339,6 @@
             align-items: center;
             margin-left: 200px;
         }
-
-       
 
         /* .mint-disclaimer {
             text-align: center;
