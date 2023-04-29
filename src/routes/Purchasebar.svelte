@@ -127,14 +127,14 @@
             </div>
             <div class="buy-container">
                 <div class="button-container">
-                    <div class="qty-wrapper">
+                    <!-- <div class="qty-wrapper">
                         <div class="caption-wrapper qty">QUANTITY</div>
                         <div class="bottom-buttons second-row">
                             <div class="qty-container">
                                 <Dropdown buttonWidth={"140px"} />
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="buy-wrapper">
                         <div class="caption-wrapper">
                             <div class="buy-bottom-caption caption">
@@ -226,10 +226,7 @@
         display: flex;
         align-items: center;
         margin-bottom: 40px;
-    }
-
-    .second-row {
-        margin-left: 10px;
+        margin-left: 100px;
     }
 
     .caption-wrapper,
@@ -237,17 +234,6 @@
         align-items: center;
         justify-content: center;
         font-family: SeravekBasicLight;
-    }
-
-    .qty-container {
-        display: flex;
-        margin-right: 20px;
-    }
-
-    .qty {
-        align-items: center;
-        text-align: center;
-        margin-bottom: 20px;
     }
 
     .caption-wrapper {
@@ -280,11 +266,7 @@
 
     .buy-bottom-caption {
         margin-bottom: 20px;
-    }
-
-    .bottom-buttons {
-        display: flex;
-        align-items: center;
+        margin-left: 100px;
     }
 
     .one-button {
@@ -297,6 +279,11 @@
 
     .bot-text {
         margin-top: 10px;
+    }
+
+    .mint-disclaimer {
+        margin-left: 20px;
+        width: 90%;
     }
 
     @media (min-width: 1300px) {
@@ -351,18 +338,15 @@
             margin-top: 0px;
             margin-bottom: 0px;
             justify-content: center;
-            width: 100%;
         }
 
         .buy-container {
             margin-top: 0px;
             justify-content: center;
             align-items: center;
-            width: 100%;
         }
 
-        .first-row,
-        .second-row {
+        .first-row {
             justify-content: center;
         }
 
