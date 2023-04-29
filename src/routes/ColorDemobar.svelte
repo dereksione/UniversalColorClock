@@ -171,4 +171,15 @@
         width: 100%;
         height: 100%;
     }
+
+    @media (max-width: 1080px){
+        .inner {
+            height: 120px;
+            text-align: center;
+        }
+
+        .container {
+            height: 340px;
+        }
+    }
 </style>
