@@ -325,7 +325,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-left: 200px;
+            /* margin-left: -100px; */
         }
 
         /* .mint-disclaimer {
@@ -337,6 +337,7 @@
         .clock {
             margin-top: 0px;
             margin-bottom: 0px;
+            margin-left:150px;
             justify-content: center;
         }
 
@@ -344,6 +345,7 @@
             margin-top: 0px;
             justify-content: center;
             align-items: center;
+            margin-left: -100px;
         }
 
         .first-row {
@@ -355,6 +357,7 @@
             margin-top: 10px;
             justify-content: center;
             text-align: left;
+            margin-left:100px;
         }
     }
 </style>
