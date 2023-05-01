@@ -161,6 +161,9 @@
 
     .caption-wrapper {
         font-size: 40px;
+        justify-content: center;
+        text-align: center;
+        padding-left: 6rem;
     }
 
     .button-wrapper {
