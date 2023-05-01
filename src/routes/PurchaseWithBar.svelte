@@ -94,7 +94,7 @@
 
 <div class="container" id="purchase-container">
     <div class="content-wrapper" >
-        <div class="caption-wrapper wrapper">PURCHASE WITH</div>
+        <div class="caption-wrapper wrapper">PURCHASE THE UNIVERSAL COLOR CLOCK</div>
         <div class="button-wrapper wrapper">
             <div class="one-button eth-button">
                 <GreyButton
