@@ -34,7 +34,7 @@
                 <h1>PURCHASE <a href="https://dminti.com/universalcolorclock-purchase/">HERE</a></h1>
                 <p>
                     See more examples at
-                    <a style="color: {colorString}" href=""> Muse Frames </a>
+                    <a style="color: {colorString}" href="https://www.museframe.io/products/muse-frame"> Muse Frames </a>
                 </p>
             </div>
         </div>
