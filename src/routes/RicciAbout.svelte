@@ -53,8 +53,13 @@
         max-width: 1310px;
         overflow-wrap: break-word;
         box-sizing: border-box;
-        width: 100%;
-        margin: 60px;
+        width: 90%;
+    }
+
+    @media (max-width: 700px) {
+        .inner-container {
+            font-size: 28px;
+        }
     }
 </style>
 

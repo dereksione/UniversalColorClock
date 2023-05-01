@@ -119,7 +119,19 @@
 
     @media (max-width: 580px) {
         .container {
-            height: 120px;
+            height: 140px;
         }
     }
+
+    @media (max-width: 460px) {
+        .container {
+            height: 240px;
+        }
+
+        .centered {
+            margin-top: 20px;
+            flex-direction: column;
+        }
+    }
+
 </style>
