@@ -1,7 +1,7 @@
 <script>
     import Navbar from "./Navbar.svelte";
     import ClockBar from "./ClockBar.svelte";
-    import PurchaseBar from "./PurchaseBar.svelte";
+    import PurchaseWithBar from "./PurchaseWithBar.svelte";
     import ColorDemobar from "./ColorDemobar.svelte";
     import PurchaseFramebar from "./PurchaseFramebar.svelte";
     import RicciAbout from "./RicciAbout.svelte";
@@ -19,7 +19,7 @@
 
 <Navbar />
 <VideoWithOverlay />
-<PurchaseBar />
+<PurchaseWithBar />
 <ClockBar />
 <ColorDemobar />
 <PurchaseFramebar />
