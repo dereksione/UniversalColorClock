@@ -31,7 +31,7 @@
                 />
             </div>
             <div class="purchase-text right-purchase-text">
-                <h1>INQUIRE TO PURCHASE</h1>
+                <h1>PURCHASE <a href="">HERE</a></h1>
                 <p>
                     See more examples at
                     <a style="color: {colorString}" href=""> Muse Frames </a>
@@ -41,8 +41,9 @@
         <div class="left-col col">
             <div class="frame-text left-content">
                 <div class="text">
-                    <span style="color: {colorString};">Customize the frame</span> with
-                    your token to bring Ricci Albenda's Universal Color Clock
+                    <span style="color: {colorString};"
+                        >Customize the frame</span
+                    > with your token to bring Ricci Albenda's Universal Color Clock
                     into your home!
                 </div>
             </div>
@@ -55,7 +56,7 @@
                     />
                 </div>
                 <div class="purchase-text">
-                    <h1>INQUIRE TO PURCHASE</h1>
+                    <h1>PURCHASE <a href="">HERE</a></h1>
                     <p>
                         See more examples at
                         <a style="color: {colorString}" href=""
@@ -91,12 +92,13 @@
         align-items: center;
     }
 
-    @media(max-width: 1230px) {
+    @media (max-width: 1230px) {
         .inner-container {
             margin-top: 40px;
         }
-        
-        .container, .inner-container {
+
+        .container,
+        .inner-container {
             flex-direction: column;
             justify-content: left;
             align-items: left;
@@ -131,13 +133,13 @@
         }
     }
 
-    @media(max-width: 1230px) {
+    @media (max-width: 1230px) {
         .container {
             height: 2000px;
         }
     }
 
-    @media(max-width: 850px) {
+    @media (max-width: 850px) {
         .right-purchase-text {
             margin-left: 15px;
         }

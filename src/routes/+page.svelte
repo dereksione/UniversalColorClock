@@ -1,6 +1,7 @@
 <script>
     import Navbar from "./Navbar.svelte";
-    import Purchasebar from "./Purchasebar.svelte";
+    import ClockBar from "./ClockBar.svelte";
+    import PurchaseBar from "./PurchaseBar.svelte";
     import ColorDemobar from "./ColorDemobar.svelte";
     import PurchaseFramebar from "./PurchaseFramebar.svelte";
     import RicciAbout from "./RicciAbout.svelte";
@@ -10,7 +11,7 @@
     import VideoWithOverlay from "./VideoWithOverlay.svelte";
 
     // Update store values every min
-    import { beforeUpdate, onMount } from "svelte";
+    import { onMount } from "svelte";
     import { updateTimeEveryMin } from "./clock";
 
     onMount(updateTimeEveryMin);
@@ -18,7 +19,8 @@
 
 <Navbar />
 <VideoWithOverlay />
-<Purchasebar />
+<PurchaseBar />
+<ClockBar />
 <ColorDemobar />
 <PurchaseFramebar />
 <RicciAbout />

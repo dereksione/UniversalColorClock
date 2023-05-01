@@ -54,12 +54,6 @@
             <div class="UCC">UNIVERSAL <br /> COLOR CLOCK</div>
             <div class="tacky-line">Fluid color. Precision time.</div>
         </div>
-        <div class="text-overlay countdown">
-            <div class="countdown-text">COUNTDOWN TO MINT</div>
-            <div class="countdown-numbers">
-                0 DAYS 0 HOURS 0 MINUTES
-            </div>
-        </div>
     </div>
 </div>
 
@@ -99,27 +93,6 @@
         margin-left: 400px;
         /* padding-left: 23%; */
         transform: translateY(-50%);
-    }
-
-    .countdown {
-        font-family: SimplexUCCA;
-        text-align: left;
-        font-weight: 300;
-        bottom: 30px;
-        margin-right: 670px;
-        color: rgba(252, 252, 252, 0.5);
-    }
-
-    .countdown-text {
-        text-align: left;
-        width: 100%;
-        margin-bottom: 10px;
-        font-family: SeravekBasicLight;
-        font-size: 20px;
-    }
-
-    .countdown-numbers {
-        font-size: 36px;
     }
 
     .UCC {

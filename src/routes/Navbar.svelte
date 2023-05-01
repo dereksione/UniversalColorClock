@@ -35,7 +35,7 @@
                     <a href="#infobar" style="color: {hueString};"> DMINTI </a>
                 </li>
                 <li>
-                    <a href="#purchase-section" style="color: {hueString};"> PURCHASE NOW </a>
+                    <a href="#purchase-container" style="color: {hueString};"> PURCHASE NOW </a>
                 </li>
                 <li >
                     <WalletButton textColor={hueString}/>

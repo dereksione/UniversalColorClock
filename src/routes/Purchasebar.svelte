@@ -1,10 +1,7 @@
 <script>
-    import { onMount } from "svelte";
-    import Clock from "./Clock.svelte";
-    import Dropdown from "./Dropdown.svelte";
     import GreyButton from "./GreyButton.svelte";
 
-    import { buyQty, normalColor, timeString } from "./stores";
+    import { buyQty, normalColor } from "./stores";
 
     let hue = {
         r: undefined,
@@ -22,15 +19,10 @@
         hue = val;
     });
 
-    timeString.subscribe((val) => {
-        strTime = val;
-    });
-
-    function printQty() {
-        console.log($buyQty);
-    }
-
     let provider;
+    /**
+     * @type {ethers.providers.Provider | ethers.Signer | undefined}
+     */
     let signer;
     /**
      * @type {string}
@@ -100,79 +92,40 @@
     }
 </script>
 
-<div class="container">
-    <div class="text-container" id="purchase-section">
-        <div class="tagline-big">
-            <p style="color: rgb({`${hue.r},${hue.g},${hue.b}`})">
-                The UC Clock displays 1440 different hues, one for each minute
-                of the day.
-            </p>
-        </div>
-        <div class="tagline-desc">
-            Each mint is tethered to a specific randomly assigned minute of the
-            day. All 1440 NFTs display the color clock in its entirety and the
-            specific minute that each NFT is tethered to will appear brighter
-            and more saturated during that minute than the rest of the clock.
-            This enables you to own a unique color, exclusive to your NFT, that
-            correlates to a distinct minute in the 24-hour clock.
-        </div>
-        <div class="tagline-desc">
-            The Universal Color Clock can be viewed on any device with a
-            browser, projected on the wall, or with any number of available
-            custom NFT viewers or frames.
-        </div>
-        <div class="bottom-container">
-            <div class="clock">
-                <Clock {hue} {strTime} />
+<div class="container" id="purchase-container">
+    <div class="content-wrapper" >
+        <div class="caption-wrapper wrapper">PURCHASE WITH</div>
+        <div class="button-wrapper wrapper">
+            <div class="one-button eth-button">
+                <GreyButton
+                    buttonText={"ETH"}
+                    buttonWidth="140px"
+                    handleClick={handleEthBuy}
+                />
             </div>
-            <div class="buy-container">
-                <div class="button-container">
-                    <!-- <div class="qty-wrapper">
-                        <div class="caption-wrapper qty">QUANTITY</div>
-                        <div class="bottom-buttons second-row">
-                            <div class="qty-container">
-                                <Dropdown buttonWidth={"140px"} />
-                            </div>
-                        </div>
-                    </div> -->
-                    <div class="buy-wrapper">
-                        <div class="caption-wrapper">
-                            <div class="buy-bottom-caption caption">
-                                PURCHASE WITH
-                            </div>
-                        </div>
-                        <div class="first-row">
-                            <div class="one-button eth">
-                                <GreyButton
-                                    buttonText={"ETH"}
-                                    buttonWidth="140px"
-                                    handleClick={handleEthBuy}
-                                />
-                            </div>
-                            <div class="one-button">
-                                <GreyButton
-                                    buttonText={"USD"}
-                                    buttonWidth="140px"
-                                    handleClick={() => {
-                                        location.href =
-                                            "https://dminti.com/universalcolorclock-purchase/";
-                                    }}
-                                />
-                            </div>
-                        </div>
-                    </div>
+
+            <div class="one-button usd-button">
+                <GreyButton
+                    buttonText={"USD"}
+                    buttonWidth="140px"
+                    handleClick={() => {
+                        location.href =
+                            "https://dminti.com/universalcolorclock-purchase/";
+                    }}
+                />
+            </div>
+        </div>
+        <div class="disclaimer-wrapper wrapper">
+            <div
+                class="mint-disclaimer top-text"
+                style="color:rgb({`${hue.r},${hue.g},${hue.b}`})"
+            >
+                <div class="top-text text">
+                    *A maximum of six mints can be purchased at once
                 </div>
-                <div
-                    class="mint-disclaimer top-text"
-                    style="color:rgb({`${hue.r},${hue.g},${hue.b}`})"
-                >
-                    <div class="top-text">
-                        *A maximum of six mints can be purchased at once
-                    </div>
-                    <div class="bot-text">
-                        **This is a randomized mint. <br /> You will be assigned
-                        a minute based on the algorithm of the mint.
-                    </div>
+                <div class="bot-text text">
+                    **This is a randomized mint. <br /> You will be assigned a minute
+                    based on the algorithm of the mint.
                 </div>
             </div>
         </div>
@@ -180,184 +133,104 @@
 </div>
 
 <style>
+    div,
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
     .container {
-        width: 100%;
-        height: 1260px;
         background-color: black;
-        display: flex;
-        justify-content: center;
-    }
-
-    .text-container {
-        justify-content: center;
-        font-weight: 200;
-        width: 80%;
-        max-width: 1310px;
-        text-align: left;
-    }
-
-    .button-container {
-        display: flex;
-        /* flex-direction: column; */
-        align-items: flex-start;
-    }
-
-    .tagline-big,
-    .tagline-desc {
-        font-family: SeravekBasicExtraLight;
-        padding-left: 30px;
-    }
-
-    .tagline-big {
-        font-size: 60px;
-        padding-top: 160px;
-        padding-right: 30px;
-    }
-
-    .tagline-desc {
         color: white;
-        font-family: SeravekBasicExtraLight;
-        padding-top: 40px;
-        font-size: 32px;
-        padding-right: 70px;
-    }
-
-    .first-row {
+        height: 300px;
         display: flex;
-        align-items: center;
-        margin-bottom: 40px;
-        margin-left: 100px;
+        justify-content: center;
     }
 
-    .caption-wrapper,
-    .mint-disclaimer {
+    .content-wrapper {
+        padding-top: 80px;
+        max-width: 680px;
+        width: 90%;
+        margin-bottom: 20px;
+        font-family: SeravekBasicLight;
+        display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        font-family: SeravekBasicLight;
     }
 
     .caption-wrapper {
-        margin-top: 20px;
+        font-size: 40px;
+    }
+
+    .button-wrapper {
         display: flex;
+        width: 60%;
         justify-content: center;
-        /* margin-right: 70px; */
-    }
-
-    .bottom-container {
         display: flex;
-        padding-top: 50px;
-        justify-content: center;
-    }
-
-    .clock {
-        font-family: SimplexUCCABold;
-        font-size: 80px;
-        font-weight: 800;
-        margin-top: 20px;
-        padding-left: 20px;
-        margin-right: 80px;
-        white-space: nowrap;
-    }
-
-    .buy-container {
-        color: white;
-        font-size: 19px;
-    }
-
-    .buy-bottom-caption {
-        margin-bottom: 20px;
-        margin-left: 100px;
     }
 
     .one-button {
-        margin-right: 20px;
+        width: 50%;
+        display: flex;
+        justify-content: center;
     }
 
-    .eth {
-        margin-left: 15px;
+    .disclaimer-wrapper {
+        width: 80%;
+        text-align: left;
+        justify-content: center;
     }
 
-    .bot-text {
-        margin-top: 10px;
+    .top-text {
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
-    .mint-disclaimer {
-        margin-left: 20px;
-        width: 90%;
+    .wrapper {
+        margin-bottom: 20px;
     }
 
-    @media (min-width: 1300px) {
-        .mint-disclaimer {
-            font-size: 14px;
-            flex-direction: column;
-            display: flex;
-            margin-top: 30px;
-            padding-right: 10%;
-            padding-left: 10%;
-            justify-content: center;
-            text-align: center;
+    @media (min-width: 1200px) {
+        .caption-wrapper {
+            font-size: 50px;
         }
     }
 
-    @media (max-width: 1300px) {
+    @media (min-width: 700px) {
+        .disclaimer-wrapper {
+            margin-left: 10rem;
+        }
+    }
+
+    @media (max-width: 700px) {
         .container {
-            height: 1800px;
-            display: flex;
+            height: 400px;
+        }
+
+        .button-wrapper {
             flex-direction: column;
-            align-items: center;
-        }
-
-        .tagline-big,
-        .tagline-desc {
-            padding-left: 50px;
-        }
-
-        .text-container {
-            margin-top: 0px;
-            justify-content: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: left;
-        }
-
-        .bottom-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            /* margin-left: -100px; */
-        }
-
-        /* .mint-disclaimer {
-            text-align: center;
-            justify-content: center;
-            text-overflow: wrap;
-        } */
-
-        .clock {
-            margin-top: 0px;
-            margin-bottom: 0px;
-            margin-left:150px;
-            justify-content: center;
-        }
-
-        .buy-container {
-            margin-top: 0px;
             justify-content: center;
             align-items: center;
-            margin-left: -100px;
         }
 
-        .first-row {
-            justify-content: center;
+        .usd-button {
+            margin-top: 20px;
         }
 
         .mint-disclaimer {
-            font-size: 14px;
-            margin-top: 10px;
-            justify-content: center;
-            text-align: left;
-            margin-left:100px;
+            font-size: 12px;
+        }
+
+        .disclaimer-wrapper {
+            width: 70%;
         }
     }
+
+    @media (max-width: 350px) {
+        .caption-wrapper {
+            font-size: 30px;
+        }
+    }
+
 </style>
