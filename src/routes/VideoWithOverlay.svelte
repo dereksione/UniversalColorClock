@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import timelapse from "../assets/timelapse.mp4";
+    import clock from "../assets/clock.mp4";
 
     let timeNow = new Date();
 
@@ -49,7 +50,7 @@
 
 <div class="parent-container">
     <div class="overlay-container">
-        <video class="responsive-video" src={timelapse} autoplay loop muted />
+        <video class="responsive-video" src={clock} autoplay loop muted />
         <div class="text-overlay vertically-centered">
             <div class="UCC">UNIVERSAL <br /> COLOR CLOCK</div>
             <div class="tacky-line">Fluid color. Precision time.</div>
@@ -57,12 +58,13 @@
     </div>
 </div>
 
-   
 <style>
     .parent-container {
         position: relative;
         overflow: hidden;
         background-color: black;
+        width: 100vw;
+        height: 100vh;
     }
 
     .overlay-container {
@@ -73,6 +75,17 @@
         align-items: center;
         height: 100%;
         width: 100%;
+    }
+
+    .responsive-video {
+        position: absolute;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .text-overlay {

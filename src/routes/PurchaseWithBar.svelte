@@ -142,13 +142,15 @@
     .container {
         background-color: black;
         color: white;
-        height: 300px;
+        height: 400px;
         display: flex;
         justify-content: center;
+        align-items: center;
+        align-content: center;
     }
 
     .content-wrapper {
-        padding-top: 80px;
+        margin-top: 120px;
         max-width: 680px;
         width: 90%;
         margin-bottom: 20px;
@@ -163,7 +165,6 @@
         font-size: 40px;
         justify-content: center;
         text-align: center;
-        padding-left: 6rem;
     }
 
     .button-wrapper {
