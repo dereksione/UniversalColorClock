@@ -31,10 +31,10 @@
                 />
             </div>
             <div class="purchase-text right-purchase-text">
-                <h1>PURCHASE <a href="">HERE</a></h1>
+                <h1>PURCHASE <a href="https://dminti.com/universalcolorclock-purchase/">HERE</a></h1>
                 <p>
                     See more examples at
-                    <a style="color: {colorString}" href="https://dminti.com/universalcolorclock-purchase/"> Muse Frames </a>
+                    <a style="color: {colorString}" href=""> Muse Frames </a>
                 </p>
             </div>
         </div>
