@@ -63,8 +63,8 @@
         position: relative;
         overflow: hidden;
         background-color: black;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 1080px;
     }
 
     .overlay-container {
@@ -81,8 +81,6 @@
         position: absolute;
         min-width: 100%;
         min-height: 100%;
-        width: auto;
-        height: auto;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -103,7 +101,7 @@
 
     .vertically-centered {
         top: 55%;
-        margin-left: 400px;
+        margin-left: 40%;
         /* padding-left: 23%; */
         transform: translateY(-50%);
     }
@@ -122,5 +120,24 @@
         font-size: 42px;
         font-weight: 300;
         color: black;
+    }
+
+    @media (max-width: 700px) {
+
+        .vertically-centered {
+            margin-left: 10%;
+        }
+    }
+
+    @media(max-width: 400px) {
+        .vertically-centered {
+            margin-left: -10%;
+        }
+
+        .UCC {
+        font-family: SimplexUCCA;
+        font-size: 70px;
+        font-weight: 300;
+    }
     }
 </style>
