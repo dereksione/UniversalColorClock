@@ -57,15 +57,6 @@
         width: 100%;
     }
 
-    .responsive-video {
-        position: absolute;
-        min-width: 100%;
-        min-height: 100%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
     .text-overlay {
         position: absolute;
         display: flex;
