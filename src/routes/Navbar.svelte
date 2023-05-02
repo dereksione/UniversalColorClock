@@ -161,7 +161,7 @@
         transition: all 0.3s ease;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
         .nav-menu {
             display: none;
         }
