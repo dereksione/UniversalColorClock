@@ -79,7 +79,9 @@
                     </a>
                 </li>
                 <li>
-                    <WalletButton textColor={hueString} />
+                    <div class="wallet-class">
+                        <WalletButton textColor={hueString} />
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -87,12 +89,12 @@
 </home>
 
 {#if isOpen}
-    <div class="fullscreen-menu" on:click={toggleMenu}>
-        <a href="#aboutRicci" style="color: {hueString};"> RICCI ALBENDA </a>
-        <a class="menu-link" href={fileUrl} style="color: {hueString};" download> ABOUT UCC</a>
-        <a class="menu-link" href="#infobar" style="color: {hueString};"> FAQ </a>
-        <a class="menu-link" href="#infobar" style="color: {hueString};"> DMINTI </a>
-        <a class="menu-link" href="#purchase-container" style="color: {hueString};">
+    <div class="fullscreen-menu" >
+        <a href="#aboutRicci" style="color: {hueString};" on:click={toggleMenu}> RICCI ALBENDA </a>
+        <a href={fileUrl} style="color: {hueString};" download> ABOUT UCC</a>
+        <a href="#infobar" style="color: {hueString};" on:click={toggleMenu}> FAQ </a>
+        <a href="#infobar" style="color: {hueString};" on:click={toggleMenu}> DMINTI </a>
+        <a href="#purchase-container" style="color: {hueString};" on:click={toggleMenu}>
             PURCHASE NOW
         </a>
         <WalletButton textColor={hueString} />
@@ -134,7 +136,7 @@
 
     .blank-list {
         font-family: SeravekBasicLight;
-        font-size: 32; 
+        font-size: 32;
         font-weight: 500;
         margin: 0;
         padding: 0;
