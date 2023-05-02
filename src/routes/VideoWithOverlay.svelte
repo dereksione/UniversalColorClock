@@ -3,54 +3,34 @@
     import timelapse from "../assets/timelapse.mp4";
     import clock from "../assets/clock.mp4";
 
-    let timeNow = new Date();
+    import { getNormalHueFromMins } from "../ucc-script/retrieve";
 
     const vidHeight = "1080px";
     const vidWidth = "1810px";
 
-    $: [hoursLeft, minsLeft] = calculateCountdown(timeNow);
-    $: daysLeft = daysBetween(timeNow, mintDate);
+    const cycleLength = 24;
+    let cycleMin = 1;
 
-    const mintDate = new Date("2023-04-30"); // April 30th, 2023 - 00:00:00
-
-    /**
-     *
-     * @param {Date} timeNow
-     */
-    function calculateCountdown(timeNow) {
-        let dateDiff = mintDate - timeNow;
-        let delta = new Date(dateDiff);
-
-        return [delta.getHours(), delta.getMinutes()];
-    }
-
-    /**
-     *
-     * @param {Date} date1
-     * @param {Date} date2
-     */
-    function daysBetween(date1, date2) {
-        const oneDay = 24 * 60 * 60 * 1000; // Number of milliseconds in a day
-        const timeDiff = Math.abs(date2.getTime() - date1.getTime()); // Difference in milliseconds
-        const numDays = Math.floor(timeDiff / oneDay); // Round down to get number of days
-
-        return numDays;
-    }
+    $: [r, g, b] = getNormalHueFromMins(cycleMin);
+    $: colorString = `rgb({${r},${g},${b}})`;
 
     onMount(() => {
+        let refreshDuration = Math.floor((cycleLength * 1000) / 1440);
+
         const interval = setInterval(() => {
-            timeNow = new Date();
-        }, 60000);
+            cycleMin = cycleMin === 1400 ? 1 : cycleMin + 1;
+        }, refreshDuration);
 
         return () => {
             clearInterval(interval);
         };
     });
+
 </script>
 
 <div class="parent-container">
-    <div class="overlay-container">
-        <video class="responsive-video" src={clock} autoplay loop muted playsinline/>
+    <div class="overlay-container" style="background-color: rgb({`${r},${g},${b}`})">
+        <!-- <video class="responsive-video" src={clock} autoplay loop muted playsinline/> -->
         <div class="text-overlay vertically-centered">
             <div class="UCC">UNIVERSAL <br /> COLOR CLOCK</div>
             <div class="tacky-line">Fluid color. Precision time.</div>
