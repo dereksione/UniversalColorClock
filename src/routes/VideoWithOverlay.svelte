@@ -50,7 +50,7 @@
 
 <div class="parent-container">
     <div class="overlay-container">
-        <video class="responsive-video" src={clock} autoplay loop muted />
+        <video class="responsive-video" src={clock} autoplay loop muted playsinline/>
         <div class="text-overlay vertically-centered">
             <div class="UCC">UNIVERSAL <br /> COLOR CLOCK</div>
             <div class="tacky-line">Fluid color. Precision time.</div>
