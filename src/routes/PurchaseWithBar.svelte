@@ -9,6 +9,8 @@
         b: undefined,
     };
 
+    let viewportWidth = window.innerWidth;
+
     /**
      * @type {string}
      */
@@ -82,7 +84,11 @@
 
             console.log("tx receipt", receipt);
         } catch (e) {
-            alert("Something went wrong. Are you connected to your wallet?");
+            if (innerWidth > 700) {
+                alert("Something went wrong. Are you connected to your wallet?");
+            } else {
+                alert("Something went wrong. If you are on a mobile device, please open this page from within a wallet app. Otherwise, connect to your wallet and try again.")
+            }
         }
     }
 
