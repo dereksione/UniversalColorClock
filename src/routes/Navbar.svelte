@@ -30,6 +30,13 @@
         }
     }
 
+    /**
+     * @param {any} _event
+     */
+    function closeMenu(_event) {
+        isOpen = false;
+    }
+
     const handleResize = () => {
         if (window.innerWidth >= 700) {
             isOpen = false;
@@ -90,6 +97,7 @@
 
 {#if isOpen}
     <div class="fullscreen-menu" >
+        <span class="close-menu" on:click={closeMenu}>&times;</span>
         <a href="#aboutRicci" style="color: {hueString};" on:click={toggleMenu}> RICCI ALBENDA </a>
         <a href={fileUrl} style="color: {hueString};" download> ABOUT UCC</a>
         <a href="#infobar" style="color: {hueString};" on:click={toggleMenu}> FAQ </a>
@@ -105,6 +113,15 @@
     .flex {
         display: flex;
         gap: var(--gap, 4rem);
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 0;
+        left: 2rem;
+        font-size: 70px;
+        cursor: pointer;
+        color: white;
     }
 
     .clock {

@@ -9,7 +9,7 @@
         b: undefined,
     };
 
-    let viewportWidth = window.innerWidth;
+    let outerWidth = 0;
 
     /**
      * @type {string}
@@ -50,9 +50,7 @@
             console.log("signer", signer);
             userAddress = await signer.getAddress();
             console.log(userAddress);
-        } else {
-            alert("Please install MetaMask to use this feature.");
-        }
+        } 
     }
 
     /**
@@ -65,7 +63,6 @@
             const price = 0.144 * quantity;
 
             let etherAmount = ethers.utils.parseEther(price.toString()); // Ether to Wei
-            console.log("etherAmount", etherAmount);
             const contractFunc = "mintRandomTokens";
 
             // Send the transaction along with the specified Ether amount
@@ -74,33 +71,38 @@
             };
 
             contract = new ethers.Contract(config.contract, abi, signer);
-            console.log(contract[contractFunc]);
-            console.log(signer);
+
 
             const contractArgs = [userAddress, quantity, rand];
 
             const tx = await contract[contractFunc](...contractArgs, overrides);
             const receipt = await tx.wait();
-
-            console.log("tx receipt", receipt);
         } catch (e) {
-            if (innerWidth > 700) {
-                alert("Something went wrong. Are you connected to your wallet?");
+            console.log("width", outerWidth);
+            if (outerWidth > 700) {
+                alert(
+                    "Something went wrong. Are you connected to your wallet?"
+                );
             } else {
-                alert("Something went wrong. If you are on a mobile device, please open this page from within a wallet app. Otherwise, connect to your wallet and try again.")
+                alert(
+                    "Something went wrong. If you are on a mobile device, please open this page from within a wallet app. Otherwise, connect to your wallet and try again."
+                );
             }
         }
     }
 
     async function handleEthBuy() {
-        console.log("here");
         await callMint(Number($buyQty));
     }
 </script>
 
+<svelte:window bind:outerWidth />
+
 <div class="container" id="purchase-container">
-    <div class="content-wrapper" >
-        <div class="caption-wrapper wrapper">PURCHASE THE UNIVERSAL COLOR CLOCK</div>
+    <div class="content-wrapper">
+        <div class="caption-wrapper wrapper">
+            PURCHASE THE UNIVERSAL COLOR CLOCK
+        </div>
         <div class="button-wrapper wrapper">
             <div class="one-button eth-button">
                 <GreyButton
@@ -242,5 +244,4 @@
             font-size: 30px;
         }
     }
-
 </style>
