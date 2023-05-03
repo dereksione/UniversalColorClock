@@ -2,7 +2,8 @@
     import { normalHue, saturatedHue } from "../../ucc-script/retrieve";
     import { onMount, afterUpdate } from "svelte";
     import { fetchNFTs } from "../../web3/token-gating";
-    
+    import { ethers } from "ethers";
+
     /**
      * @type {number[]}
      */
@@ -113,14 +114,35 @@
         };
     });
 
-    onMount( async () => {
-        NFTsOwned = await fetchNFTs();
-    })
-
     function handleButtonClick() {
         enterFullScreen();
         exitFullScreen();
     }
+
+    async function setupTokenGating() {
+        // @ts-ignore
+        if (typeof window.ethereum !== "undefined") {
+            // @ts-ignore
+            let provider = new ethers.providers.Web3Provider(window.ethereum);
+            let signer = provider.getSigner();
+            console.log("signer", signer);
+            let userAddress = await signer.getAddress();
+
+            NFTsOwned = await fetchNFTs(userAddress);
+            console.log(NFTsOwned);
+            if (NFTsOwned.length === 0) {
+                alert("You do not own any NFTs in this collection. Please buy some to access this feature!");
+                location.href = "/";
+            }
+        } else {
+            alert("Please connect your wallet to access this feature");
+        }
+    }
+
+    onMount(async () => {
+        await setupTokenGating();
+    })
+
 </script>
 
 <svelte:window on:keydown={keyEventHandler} />
