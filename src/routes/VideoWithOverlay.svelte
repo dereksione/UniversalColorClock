@@ -30,7 +30,8 @@
 
 <div class="parent-container">
     <div class="overlay-container" style="background-color: rgb({`${r},${g},${b}`})">
-        <!-- <video class="responsive-video" src={clock} autoplay loop muted playsinline/> -->
+    <!-- <div class="overlay-container" style="background-color: black"> -->
+        <!-- <video class="responsive-video" src={timelapse} autoplay loop muted playsinline/> -->
         <div class="text-overlay vertically-centered">
             <div class="UCC">UNIVERSAL <br /> COLOR CLOCK</div>
             <div class="tacky-line">Fluid color. Precision time.</div>
@@ -55,6 +56,17 @@
         align-items: center;
         height: 100%;
         width: 100%;
+    }
+
+    .responsive-video {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: none;
+        min-width: 100%;
+        width: auto;
+        height: 100%;
+        object-fit: cover;
     }
 
     .text-overlay {
@@ -94,7 +106,6 @@
     }
 
     @media (max-width: 700px) {
-
         .vertically-centered {
             margin-left: 10%;
         }
