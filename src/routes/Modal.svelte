@@ -48,7 +48,7 @@
                     </option>
                 {/each}
             </select>
-            <!-- <io-print-button
+            <io-print-button
                 blockchain="eth"
                 contract-id={contractId}
                 token-id={`${selectedNFT}`}
@@ -56,7 +56,7 @@
                 asset-url="https://openseauserdata.com/files/55cf5265b7c6467a5d43d21a56644e1e.mp4"
                 redirect-url="https://universalcolorclock.xyz"
                 item-title="Ricci Albenda's Universal Color Clock"
-            /> -->
+            />
         </slot>
     </div>
 </div>
