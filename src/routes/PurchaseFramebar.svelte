@@ -1,9 +1,15 @@
 <script>
+    // @ts-nocheck
+
     import largeframe from "../assets/largeframe.png";
     import smallframe from "../assets/smallframe.png";
 
     import { normalHue } from "../ucc-script/retrieve";
     import { onMount } from "svelte";
+    import Modal from "./Modal.svelte";
+    import { ethers } from "ethers";
+    import { fetchNFTs } from "../web3/token-gating";
+
     let time = new Date();
 
     $: [r, g, b] = normalHue(time);
@@ -18,6 +24,41 @@
             clearInterval(interval);
         };
     });
+
+    let NFTsOwned = [];
+    let walletAddress;
+
+    // initialise modal state and content
+    let showModal = false;
+    let modalContent;
+
+    // pass in component as parameter and toggle modal state
+    function toggleModal(component) {
+        modalContent = component;
+        showModal = !showModal;
+    }
+
+    async function showTestModal() {
+        // @ts-ignore
+        if (typeof window.ethereum !== "undefined") {
+            // @ts-ignore
+            let provider = new ethers.providers.Web3Provider(window.ethereum);
+            let signer = provider.getSigner();
+            console.log("signer", signer);
+            walletAddress = await signer.getAddress();
+
+            NFTsOwned = await fetchNFTs(walletAddress);
+            // if (NFTsOwned.length === 0) {
+            //     alert("You do not own any NFTs in this collection. Please buy some to access this feature!");
+            //     return;
+            // }
+        } else {
+            alert("Please connect your wallet to access this feature");
+            return;
+        }
+
+        toggleModal(Modal);
+    }
 </script>
 
 <dev class="container">
@@ -31,10 +72,20 @@
                 />
             </div>
             <div class="purchase-text right-purchase-text">
-                <h1>PURCHASE <a href="https://dminti.com/universalcolorclock-purchase/">HERE</a></h1>
+                <h1>
+                    PURCHASE <a
+                        href="https://dminti.com/universalcolorclock-purchase/"
+                        style="color: {colorString};">HERE</a
+                    >
+                </h1>
                 <p>
                     See more examples at
-                    <a style="color: {colorString}" href="https://www.museframe.io/products/muse-frame"> Muse Frames </a>
+                    <a
+                        style="color: {colorString}"
+                        href="https://www.museframe.io/products/muse-frame"
+                    >
+                        Muse Frames
+                    </a>
                 </p>
             </div>
         </div>
@@ -56,7 +107,12 @@
                     />
                 </div>
                 <div class="purchase-text">
-                    <h1>PURCHASE <a href="https://dminti.com/universalcolorclock-purchase/">HERE</a></h1>
+                    <h1>
+                        PURCHASE <button
+                            on:click={() => showTestModal()}
+                            style="color: {colorString};">HERE</button
+                        >
+                    </h1>
                     <p>
                         See more examples at
                         <a style="color: {colorString}" href=""
@@ -68,6 +124,12 @@
         </div>
     </div>
 </dev>
+
+{#if showModal}
+    <Modal closeModal={() => toggleModal(null)} >
+        <svelte:component this={modalContent} closeModal={() => toggleModal(null)} />
+    </Modal>
+{/if}
 
 <style>
     .container {
@@ -81,6 +143,15 @@
         max-width: 1310px;
         font-family: "Montserrat", sans-serif;
         font-weight: 200;
+    }
+
+    button {
+        background: none;
+        border: none;
+        padding: 0;
+        font-family: inherit;
+        font-size: inherit;
+        text-decoration: underline;
     }
 
     .container,
