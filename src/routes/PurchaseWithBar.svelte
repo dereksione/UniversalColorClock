@@ -50,7 +50,15 @@
             console.log("signer", signer);
             userAddress = await signer.getAddress();
             console.log(userAddress);
-        } 
+        } else {
+            if (outerWidth > 700) {
+                alert("Please install a wallet to use this feature.");
+            } else {
+                alert(
+                    "If you are on a mobile device, please open this page from within a wallet app. Otherwise, install a wallet to use this feature."
+                ); 
+            }
+        }
     }
 
     /**
