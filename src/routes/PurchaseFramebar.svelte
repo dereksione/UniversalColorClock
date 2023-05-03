@@ -61,7 +61,7 @@
     }
 </script>
 
-<dev class="container">
+<div class="container">
     <div class="inner-container">
         <div class="right-col col">
             <div class="large-asset asset">
@@ -123,7 +123,7 @@
             </div>
         </div>
     </div>
-</dev>
+</div>
 
 {#if showModal}
     <Modal closeModal={() => toggleModal(null)} >
@@ -215,11 +215,6 @@
         .right-purchase-text {
             margin-left: 15px;
         }
-    }
-
-    .col {
-        padding-left: 10%;
-        padding-right: 10%;
     }
 
     .right-col {
