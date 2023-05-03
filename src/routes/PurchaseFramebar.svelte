@@ -48,10 +48,10 @@
             walletAddress = await signer.getAddress();
 
             NFTsOwned = await fetchNFTs(walletAddress);
-            // if (NFTsOwned.length === 0) {
-            //     alert("You do not own any NFTs in this collection. Please buy some to access this feature!");
-            //     return;
-            // }
+            if (NFTsOwned.length === 0) {
+                alert("You do not own any NFTs in this collection. Please buy some to access this feature!");
+                return;
+            }
         } else {
             alert("Please connect your wallet to access this feature");
             return;
