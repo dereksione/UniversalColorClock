@@ -8,6 +8,8 @@
 
   let isConnected = false;
 
+  let outerWidth = 0;
+
   async function handleClick() {
     if (isConnected) {
       tokenGated();
@@ -58,9 +60,18 @@
     } else {
       isConnected = false;
       console.error("Failed to connect: Ethereum browser not detected");
+      if (outerWidth > 800) {
+        alert("Please install a wallet to use this feature.");
+      } else {
+        alert(
+          "If you are on a mobile device, please open this page from within a wallet app. Otherwise, install a wallet to use this feature."
+        );
+      }
     }
   }
 </script>
+
+<svelte:window bind:outerWidth />
 
 <button on:click={handleClick} style="color: {textColor}">
   {#if isConnected}

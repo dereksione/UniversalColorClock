@@ -50,14 +50,6 @@
             console.log("signer", signer);
             userAddress = await signer.getAddress();
             console.log(userAddress);
-        } else {
-            if (outerWidth > 700) {
-                alert("Please install a wallet to use this feature.");
-            } else {
-                alert(
-                    "If you are on a mobile device, please open this page from within a wallet app. Otherwise, install a wallet to use this feature."
-                ); 
-            }
         }
     }
 
@@ -87,7 +79,7 @@
             const receipt = await tx.wait();
         } catch (e) {
             console.log("width", outerWidth);
-            if (outerWidth > 700) {
+            if (outerWidth > 800) {
                 alert(
                     "Something went wrong. Are you connected to your wallet?"
                 );
