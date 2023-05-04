@@ -42,6 +42,10 @@
     import { getRandomInt } from "../web3/random";
 
     async function connectToWallet() {
+        await window.ethereum.request({
+            method: "eth_requestAccounts",
+        });
+        
         // @ts-ignore
         if (typeof window.ethereum !== "undefined") {
             // @ts-ignore
@@ -50,12 +54,6 @@
             console.log("signer", signer);
             userAddress = await signer.getAddress();
             console.log(userAddress);
-        } else {
-            // @ts-ignore
-            const accounts = await window.ethereum.request({
-                method: "eth_requestAccounts",
-            });
-            await connectToWallet();
         }
     }
 

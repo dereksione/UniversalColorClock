@@ -57,7 +57,6 @@
       }
     } else {
       isConnected = false;
-      console.error("Failed to connect: Ethereum browser not detected");
       if (outerWidth > 800) {
         alert("Please install a wallet to use this feature.");
       } else {
