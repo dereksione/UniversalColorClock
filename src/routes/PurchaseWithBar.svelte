@@ -63,6 +63,12 @@
             const price = 0.144 * quantity;
 
             let etherAmount = ethers.utils.parseEther(price.toString()); // Ether to Wei
+            // @ts-ignore
+            const userBalance = await signer.getBalance();
+            if (etherAmount > userBalance) {
+                alert("You do not have enough ETH in you wallet to complete this transaction. Mint price is 0.144 ETH.");
+                return;
+            }
             const contractFunc = "mintRandomTokens";
 
             // Send the transaction along with the specified Ether amount
@@ -71,7 +77,6 @@
             };
 
             contract = new ethers.Contract(config.contract, abi, signer);
-
 
             const contractArgs = [userAddress, quantity, rand];
 
