@@ -49,9 +49,7 @@
         const accounts = await window.ethereum.request({
           method: "eth_requestAccounts",
         });
-        isConnected = true;
-        console.log("connected");
-        // localStorage.setItem("walletAddress", accounts[0]);
+        isConnected = true; 
       } catch (error) {
         isConnected = false;
         // @ts-ignore

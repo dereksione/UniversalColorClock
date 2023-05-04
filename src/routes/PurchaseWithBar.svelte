@@ -50,6 +50,12 @@
             console.log("signer", signer);
             userAddress = await signer.getAddress();
             console.log(userAddress);
+        } else {
+            // @ts-ignore
+            const accounts = await window.ethereum.request({
+                method: "eth_requestAccounts",
+            });
+            await connectToWallet();
         }
     }
 
@@ -66,7 +72,9 @@
             // @ts-ignore
             const userBalance = await signer.getBalance();
             if (etherAmount > userBalance) {
-                alert("You do not have enough ETH in you wallet to complete this transaction. Mint price is 0.144 ETH.");
+                alert(
+                    "You do not have enough ETH in your wallet to complete this transaction. Mint price is 0.144 ETH."
+                );
                 return;
             }
             const contractFunc = "mintRandomTokens";
