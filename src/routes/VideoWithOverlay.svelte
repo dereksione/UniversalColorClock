@@ -100,7 +100,7 @@
         }
 
         .vertically-centered {
-            top: 10%;
+            top: 13%;
             transform: translateX(-10%);
         }
     }
