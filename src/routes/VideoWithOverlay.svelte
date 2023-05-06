@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import timelapse from "../assets/timelapse.mp4";
+    import timelapseCropped from "../assets/timelapse-cropped.mp4";
     import clock from "../assets/clock.mp4";
 
     import { getNormalHueFromMins } from "../ucc-script/retrieve";
@@ -10,6 +11,10 @@
 
     const cycleLength = 24;
     let cycleMin = 1;
+
+    let source = timelapse;
+
+    let outerWidth;
 
     $: [r, g, b] = getNormalHueFromMins(cycleMin);
     $: colorString = `rgb({${r},${g},${b}})`;
@@ -21,23 +26,28 @@
             cycleMin = cycleMin === 1400 ? 1 : cycleMin + 1;
         }, refreshDuration);
 
+        if (outerWidth <= 1172) {
+            source = timelapseCropped;
+        }
+
         return () => {
             clearInterval(interval);
         };
     });
-
 </script>
 
 <div class="parent-container">
-    <div class="overlay-container" style="background-color: rgb({`${r},${g},${b}`})">
-    <!-- <div class="overlay-container" style="background-color: black"> -->
-        <!-- <video class="responsive-video" src={timelapse} autoplay loop muted playsinline/> -->
+    <!-- <div class="overlay-container" style="background-color: rgb({`${r},${g},${b}`})"> -->
+    <div class="overlay-container" style="background-color: black">
+        <video class="responsive-video" src={source} autoplay loop muted playsinline />
         <div class="text-overlay vertically-centered">
             <div class="UCC">UNIVERSAL <br /> COLOR CLOCK</div>
             <div class="tacky-line">Fluid color. Precision time.</div>
         </div>
     </div>
 </div>
+
+<svelte:window bind:outerWidth />
 
 <style>
     .parent-container {
@@ -60,8 +70,6 @@
 
     .responsive-video {
         position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
         max-width: none;
         min-width: 100%;
         width: auto;
@@ -82,11 +90,32 @@
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
     }
 
-    .vertically-centered {
-        top: 55%;
-        margin-left: 40%;
-        /* padding-left: 23%; */
-        transform: translateY(-50%);
+    @media (max-width: 1172px) {
+        .parent-container {
+            height: 720px;
+        }
+
+        .responsive-video {
+            left: 0;
+        }
+
+        .vertically-centered {
+            top: 10%;
+            transform: translateX(-10%);
+        }
+    }
+
+    @media (min-width: 1172px) {
+        .responsive-video {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .vertically-centered {
+            top: 35%;
+            margin-left: 40%;
+            transform: translateX(-22%)
+        }
     }
 
     .UCC {
@@ -111,15 +140,15 @@
         }
     }
 
-    @media(max-width: 400px) {
+    @media (max-width: 400px) {
         .vertically-centered {
             margin-left: -10%;
         }
 
         .UCC {
-        font-family: SimplexUCCA;
-        font-size: 70px;
-        font-weight: 300;
-    }
+            font-family: SimplexUCCA;
+            font-size: 70px;
+            font-weight: 300;
+        }
     }
 </style>
