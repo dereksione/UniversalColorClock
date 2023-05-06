@@ -39,7 +39,14 @@
 <div class="parent-container">
     <!-- <div class="overlay-container" style="background-color: rgb({`${r},${g},${b}`})"> -->
     <div class="overlay-container" style="background-color: black">
-        <video class="responsive-video" src={source} autoplay loop muted playsinline />
+        <video
+            class="responsive-video"
+            src={source}
+            autoplay
+            loop
+            muted
+            playsinline
+        />
         <div class="text-overlay vertically-centered">
             <div class="UCC">UNIVERSAL <br /> COLOR CLOCK</div>
             <div class="tacky-line">Fluid color. Precision time.</div>
@@ -90,34 +97,6 @@
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
     }
 
-    @media (max-width: 1172px) {
-        .parent-container {
-            height: 720px;
-        }
-
-        .responsive-video {
-            left: 0;
-        }
-
-        .vertically-centered {
-            top: 13%;
-            transform: translateX(-10%);
-        }
-    }
-
-    @media (min-width: 1172px) {
-        .responsive-video {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .vertically-centered {
-            top: 35%;
-            margin-left: 40%;
-            transform: translateX(-22%)
-        }
-    }
-
     .UCC {
         font-family: SimplexUCCA;
         font-size: 90px;
@@ -134,21 +113,35 @@
         color: black;
     }
 
-    @media (max-width: 700px) {
-        .vertically-centered {
-            margin-left: 10%;
+    @media (max-width: 1172px) {
+        .parent-container {
+            height: 720px;
         }
-    }
 
-    @media (max-width: 400px) {
+        .responsive-video {
+            left: 0;
+        }
+
         .vertically-centered {
-            margin-left: -10%;
+            top: 13%;
+            transform: translateX(-10%);
         }
 
         .UCC {
-            font-family: SimplexUCCA;
-            font-size: 70px;
-            font-weight: 300;
+            font-size: 80px;
+        }
+    }
+
+    @media (min-width: 1172px) {
+        .responsive-video {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .vertically-centered {
+            top: 35%;
+            margin-left: 40%;
+            transform: translateX(-22%);
         }
     }
 </style>
