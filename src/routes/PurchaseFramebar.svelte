@@ -79,10 +79,10 @@
                     >
                 </h1>
                 <p>
-                    See more examples at
+                    Shop all options at
                     <a
                         style="color: {colorString}"
-                        href="https://www.museframe.io/products/muse-frame"
+                        href="https://www.museframe.io/?sca_ref=3686575.AhWpj6nnhB"
                     >
                         Muse Frames
                     </a>
@@ -115,7 +115,7 @@
                     </h1>
                     <p>
                         See more examples at
-                        <a style="color: {colorString}" href=""
+                        <a style="color: {colorString}" href="https://infiniteobjects.com/"
                             >Infinite Objects</a
                         >
                     </p>

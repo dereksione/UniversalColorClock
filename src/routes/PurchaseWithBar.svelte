@@ -45,7 +45,7 @@
         await window.ethereum.request({
             method: "eth_requestAccounts",
         });
-        
+
         // @ts-ignore
         if (typeof window.ethereum !== "undefined") {
             // @ts-ignore
@@ -92,11 +92,11 @@
             console.log("width", outerWidth);
             if (outerWidth > 800) {
                 alert(
-                    "Something went wrong. Are you connected to your wallet?"
+                    "Please connect your wallet to use this feature."
                 );
             } else {
                 alert(
-                    "Something went wrong. If you are on a mobile device, please open this page from within a wallet app. Otherwise, connect to your wallet and try again."
+                    "Please connect your wallet and open the link in your wallet browser. If you do not have a wallet, please download one."
                 );
             }
         }

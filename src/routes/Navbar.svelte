@@ -71,7 +71,7 @@
                 </li>
                 <li>
                     <a href={fileUrl} style="color: {hueString};" download>
-                        ABOUT UCC</a
+                        UCC GUIDE</a
                     >
                 </li>
                 <li>
@@ -99,7 +99,7 @@
     <div class="fullscreen-menu" >
         <span class="close-menu" on:click={closeMenu}>&times;</span>
         <a href="#aboutRicci" style="color: {hueString};" on:click={toggleMenu}> RICCI ALBENDA </a>
-        <a href={fileUrl} style="color: {hueString};" download> ABOUT UCC</a>
+        <a href={fileUrl} style="color: {hueString};" download> UCC GUIDE </a>
         <a href="#infobar" style="color: {hueString};" on:click={toggleMenu}> FAQ </a>
         <a href="#infobar" style="color: {hueString};" on:click={toggleMenu}> DMINTI </a>
         <a href="#purchase-container" style="color: {hueString};" on:click={toggleMenu}>

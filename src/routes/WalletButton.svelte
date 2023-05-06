@@ -49,7 +49,7 @@
         const accounts = await window.ethereum.request({
           method: "eth_requestAccounts",
         });
-        isConnected = true; 
+        isConnected = true;
       } catch (error) {
         isConnected = false;
         // @ts-ignore
@@ -61,7 +61,7 @@
         alert("Please install a wallet to use this feature.");
       } else {
         alert(
-          "If you are on a mobile device, please open this page from within a wallet app. Otherwise, install a wallet to use this feature."
+          "Please connect your wallet and open the link in your wallet browser. If you do not have a wallet, please download one"
         );
       }
     }
