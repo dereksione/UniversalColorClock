@@ -49,7 +49,9 @@
 
             NFTsOwned = await fetchNFTs(walletAddress);
             if (NFTsOwned.length === 0) {
-                alert("You do not own any NFTs in this collection. Please buy some to access this feature!");
+                alert(
+                    "You do not own any NFTs in this collection. Please buy some to access this feature!"
+                );
                 return;
             }
         } else {
@@ -108,14 +110,21 @@
                 </div>
                 <div class="purchase-text">
                     <h1>
-                        PURCHASE <button
+                        PURCHASE
+                        <!-- <button
                             on:click={() => showTestModal()}
                             style="color: {colorString};">HERE</button
+                        > -->
+                        <a
+                            href="https://dminti.com/universalcolorclock-purchase/"
+                            style="color: {colorString};">HERE</a
                         >
                     </h1>
                     <p>
                         See more examples at
-                        <a style="color: {colorString}" href="https://infiniteobjects.com/"
+                        <a
+                            style="color: {colorString}"
+                            href="https://infiniteobjects.com/"
                             >Infinite Objects</a
                         >
                     </p>
@@ -126,8 +135,11 @@
 </div>
 
 {#if showModal}
-    <Modal closeModal={() => toggleModal(null)} >
-        <svelte:component this={modalContent} closeModal={() => toggleModal(null)} />
+    <Modal closeModal={() => toggleModal(null)}>
+        <svelte:component
+            this={modalContent}
+            closeModal={() => toggleModal(null)}
+        />
     </Modal>
 {/if}
 
